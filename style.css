@@ -192,11 +192,11 @@ a {
   position: relative;
 }
 
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.2fr .8fr;
-  gap: 42px;
-  align-items: center;
+.hero-grid{
+    display:grid;
+    grid-template-columns:500px 1fr;
+    gap:80px;
+    align-items:center;
 }
 
 .eyebrow {
