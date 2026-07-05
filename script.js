@@ -1,345 +1,103 @@
-// ===============================
-// Portfolio JavaScript
-// Jeric Albar Portfolio
-// ===============================
+const loader = document.getElementById("loader");
+const typingText = document.getElementById("typingText");
+const themeToggle = document.getElementById("themeToggle");
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+const cursorGlow = document.querySelector(".cursor-glow");
 
-// ---------- LOADER ----------
 window.addEventListener("load", () => {
-
-    const loader = document.getElementById("loader");
-
-    if(loader){
-        setTimeout(()=>{
-            loader.classList.add("hidden");
-        },800);
-    }
-
+  setTimeout(() => loader.classList.add("hidden"), 700);
 });
 
-// ---------- TYPING EFFECT ----------
+document.getElementById("year").textContent = new Date().getFullYear();
 
-const typing = document.querySelector("#typing");
-
-const words = [
-    "IT Support Specialist",
-    "Network Administrator",
-    "Printer Technician",
-    "CCTV Support",
-    "Adobe Photoshop Designer",
-    "Web Developer"
+const phrases = [
+  "IT Support Specialist",
+  "Network Troubleshooter",
+  "Printer Technician",
+  "CCTV Support Technician",
+  "Remote Helpdesk Assistant"
 ];
 
-let wordIndex = 0;
-let letterIndex = 0;
+let phraseIndex = 0;
+let charIndex = 0;
 let deleting = false;
 
-function typeEffect(){
+function typeEffect() {
+  const currentPhrase = phrases[phraseIndex];
 
-    if(!typing) return;
+  if (!deleting) {
+    typingText.textContent = currentPhrase.slice(0, charIndex + 1);
+    charIndex++;
 
-    const current = words[wordIndex];
-
-    if(!deleting){
-
-        typing.textContent = current.substring(0,letterIndex);
-
-        letterIndex++;
-
-        if(letterIndex > current.length){
-
-            deleting = true;
-
-            setTimeout(typeEffect,1500);
-
-            return;
-
-        }
-
-    }else{
-
-        typing.textContent = current.substring(0,letterIndex);
-
-        letterIndex--;
-
-        if(letterIndex < 0){
-
-            deleting = false;
-
-            wordIndex++;
-
-            if(wordIndex >= words.length){
-
-                wordIndex = 0;
-
-            }
-
-        }
-
+    if (charIndex === currentPhrase.length) {
+      deleting = true;
+      setTimeout(typeEffect, 1300);
+      return;
     }
+  } else {
+    typingText.textContent = currentPhrase.slice(0, charIndex - 1);
+    charIndex--;
 
-    setTimeout(typeEffect,deleting ? 45 : 90);
+    if (charIndex === 0) {
+      deleting = false;
+      phraseIndex = (phraseIndex + 1) % phrases.length;
+    }
+  }
 
+  setTimeout(typeEffect, deleting ? 45 : 80);
 }
 
 typeEffect();
 
+const revealElements = document.querySelectorAll(".reveal");
 
-// ---------- SCROLL ANIMATION ----------
-
-const reveals = document.querySelectorAll(".reveal");
-
-function revealElements(){
-
-    const windowHeight = window.innerHeight;
-
-    reveals.forEach(element=>{
-
-        const top = element.getBoundingClientRect().top;
-
-        if(top < windowHeight - 120){
-
-            element.classList.add("active");
-
-        }
-
-    });
-
-}
-
-window.addEventListener("scroll",revealElements);
-
-revealElements();
-
-
-// ---------- ACTIVE NAVIGATION ----------
-
-const sections = document.querySelectorAll("section");
-
-const navLinks = document.querySelectorAll(".nav-links a");
-
-window.addEventListener("scroll",()=>{
-
-    let current = "";
-
-    sections.forEach(section=>{
-
-        const sectionTop = section.offsetTop - 120;
-
-        if(pageYOffset >= sectionTop){
-
-            current = section.getAttribute("id");
-
-        }
-
-    });
-
-    navLinks.forEach(link=>{
-
-        link.classList.remove("active");
-
-        if(link.getAttribute("href")=="#"+current){
-
-            link.classList.add("active");
-
-        }
-
-    });
-
-});
-
-
-// ---------- STICKY NAVBAR ----------
-
-const navbar = document.querySelector("header");
-
-window.addEventListener("scroll",()=>{
-
-    if(window.scrollY>50){
-
-        navbar.classList.add("sticky");
-
-    }else{
-
-        navbar.classList.remove("sticky");
-
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("active");
     }
+  });
+}, { threshold: 0.15 });
 
+revealElements.forEach(el => observer.observe(el));
+
+themeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("light");
+  const isLight = document.body.classList.contains("light");
+  themeToggle.textContent = isLight ? "☀️" : "🌙";
+  localStorage.setItem("theme", isLight ? "light" : "dark");
 });
 
-
-// ---------- MOBILE MENU ----------
-
-const menu = document.querySelector(".menu-btn");
-
-const nav = document.querySelector(".nav-links");
-
-if(menu){
-
-menu.addEventListener("click",()=>{
-
-    nav.classList.toggle("show");
-
-});
-
+if (localStorage.getItem("theme") === "light") {
+  document.body.classList.add("light");
+  themeToggle.textContent = "☀️";
 }
 
-document.querySelectorAll(".nav-links a").forEach(link=>{
-
-    link.addEventListener("click",()=>{
-
-        if(nav){
-
-            nav.classList.remove("show");
-
-        }
-
-    });
-
+menuBtn.addEventListener("click", () => {
+  navLinks.classList.toggle("open");
 });
 
-
-// ---------- SMOOTH SCROLL ----------
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
-
-    anchor.addEventListener("click",function(e){
-
-        e.preventDefault();
-
-        document.querySelector(this.getAttribute("href")).scrollIntoView({
-
-            behavior:"smooth"
-
-        });
-
-    });
-
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => navLinks.classList.remove("open"));
 });
 
-
-// ---------- CURSOR GLOW ----------
-
-const glow = document.querySelector(".cursor-glow");
-
-if(glow){
-
-document.addEventListener("mousemove",(e)=>{
-
-    glow.style.left=e.clientX+"px";
-
-    glow.style.top=e.clientY+"px";
-
+document.addEventListener("mousemove", (event) => {
+  cursorGlow.style.left = `${event.clientX}px`;
+  cursorGlow.style.top = `${event.clientY}px`;
 });
 
+function sendMessage(event) {
+  event.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
+  const body = encodeURIComponent(
+    `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+  );
+
+  window.location.href = `mailto:your-email@example.com?subject=${subject}&body=${body}`;
 }
-
-
-// ---------- THEME TOGGLE ----------
-
-const toggle=document.getElementById("themeToggle");
-
-if(toggle){
-
-toggle.addEventListener("click",()=>{
-
-    document.body.classList.toggle("light");
-
-    if(document.body.classList.contains("light")){
-
-        toggle.innerHTML="☀️";
-
-        localStorage.setItem("theme","light");
-
-    }else{
-
-        toggle.innerHTML="🌙";
-
-        localStorage.setItem("theme","dark");
-
-    }
-
-});
-
-const savedTheme=localStorage.getItem("theme");
-
-if(savedTheme==="light"){
-
-    document.body.classList.add("light");
-
-    toggle.innerHTML="☀️";
-
-}
-
-}
-
-
-// ---------- COUNTER ANIMATION ----------
-
-const counters=document.querySelectorAll(".counter");
-
-const speed=200;
-
-counters.forEach(counter=>{
-
-const update=()=>{
-
-const target=+counter.getAttribute("data-target");
-
-const count=+counter.innerText;
-
-const inc=target/speed;
-
-if(count<target){
-
-counter.innerText=Math.ceil(count+inc);
-
-requestAnimationFrame(update);
-
-}else{
-
-counter.innerText=target;
-
-}
-
-}
-
-update();
-
-});
-
-
-// ---------- BACK TO TOP ----------
-
-const topBtn=document.getElementById("topBtn");
-
-if(topBtn){
-
-window.addEventListener("scroll",()=>{
-
-if(window.scrollY>400){
-
-topBtn.classList.add("show");
-
-}else{
-
-topBtn.classList.remove("show");
-
-}
-
-});
-
-topBtn.addEventListener("click",()=>{
-
-window.scrollTo({
-
-top:0,
-
-behavior:"smooth"
-
-});
-
-});
-
-}
-
-console.log("Jeric Portfolio Loaded Successfully 🚀");
