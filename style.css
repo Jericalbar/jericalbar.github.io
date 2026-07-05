@@ -1,3 +1,11 @@
+/*
+  Portfolio Website
+  Owner/Name: Jeric Albar
+  File: style.css
+  Remarks: Main styling for Jeric Albar's IT Support Portfolio.
+*/
+
+/* COLOR VARIABLES: Main theme colors used across the website */
 :root {
   --bg: #06111f;
   --bg-soft: #0d1b2f;
@@ -10,16 +18,19 @@
   --shadow: 0 25px 80px rgba(0, 0, 0, 0.35);
 }
 
+/* GLOBAL RESET: Removes default browser spacing */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* SMOOTH SCROLL: Enables smooth movement when clicking navigation links */
 html {
   scroll-behavior: smooth;
 }
 
+/* BODY STYLE: Main font, background, text color, and page behavior */
 body {
   font-family: "Inter", sans-serif;
   background:
@@ -30,11 +41,13 @@ body {
   overflow-x: hidden;
 }
 
+/* LINK STYLE: Removes default underline and keeps link color consistent */
 a {
   color: inherit;
   text-decoration: none;
 }
 
+/* HEADER: Fixed top navigation bar */
 .site-header {
   position: fixed;
   top: 0;
@@ -45,6 +58,7 @@ a {
   border-bottom: 1px solid rgba(255,255,255,.1);
 }
 
+/* NAVBAR: Controls logo and menu layout */
 .navbar {
   max-width: 1180px;
   margin: auto;
@@ -54,6 +68,7 @@ a {
   justify-content: space-between;
 }
 
+/* LOGO: Jeric Albar brand name and initials */
 .logo {
   display: flex;
   gap: 12px;
@@ -71,6 +86,7 @@ a {
   color: white;
 }
 
+/* NAVIGATION LINKS: Home, About, Skills, Experience, Projects, Contact */
 .nav-links {
   display: flex;
   gap: 26px;
@@ -85,12 +101,14 @@ a {
   color: var(--primary);
 }
 
+/* SECTION LAYOUT: Controls width and spacing of all main sections */
 .section {
   max-width: 1180px;
   margin: auto;
   padding: 110px 22px;
 }
 
+/* HERO SECTION: Main first screen of the portfolio */
 .hero {
   min-height: 100vh;
   display: grid;
@@ -98,6 +116,7 @@ a {
   padding-top: 130px;
 }
 
+/* HERO GRID: Left content and right profile image layout */
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr 500px;
@@ -105,6 +124,7 @@ a {
   align-items: center;
 }
 
+/* EYEBROW TEXT: Small blue label above section titles */
 .eyebrow {
   color: var(--primary);
   font-family: "JetBrains Mono", monospace;
@@ -113,6 +133,7 @@ a {
   letter-spacing: 1px;
 }
 
+/* MAIN TITLE: Large name text in the hero section */
 h1 {
   font-size: clamp(52px, 7vw, 86px);
   line-height: .95;
@@ -126,6 +147,7 @@ h1 span {
   color: transparent;
 }
 
+/* TYPING TEXT: Fixed-height role text to prevent shaking layout */
 .typing-wrap {
   height: 48px;
   font-size: 32px;
@@ -136,6 +158,7 @@ h1 span {
   white-space: nowrap;
 }
 
+/* HERO DESCRIPTION: Short introduction paragraph */
 .hero-description {
   color: var(--muted);
   max-width: 620px;
@@ -143,12 +166,14 @@ h1 span {
   font-size: 1.08rem;
 }
 
+/* HERO BUTTONS: View Projects and Contact Me buttons */
 .hero-actions {
   margin-top: 32px;
   display: flex;
   gap: 14px;
 }
 
+/* BUTTON STYLE: Shared button design */
 .btn {
   padding: 15px 24px;
   border-radius: 14px;
@@ -169,12 +194,14 @@ h1 span {
   background: rgba(255,255,255,.08);
 }
 
+/* HERO IMAGE CONTAINER: Positions Jeric Albar profile image */
 .hero-image {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* PROFILE IMAGE: Size, crop, border, and glow effect */
 .hero-image img {
   width: 460px;
   height: 540px;
@@ -188,6 +215,7 @@ h1 span {
   background: rgba(255,255,255,.05);
 }
 
+/* STATS GRID: Quick achievements below hero section */
 .stats {
   margin-top: 55px;
   display: grid;
@@ -200,6 +228,7 @@ h1 span {
 .skill-card,
 .timeline-item,
 .project-card,
+/* CONTACT FORM: Inquiry form layout */
 .contact-form {
   background: var(--card);
   border: 1px solid var(--card-border);
@@ -223,6 +252,7 @@ h1 span {
   color: var(--muted);
 }
 
+/* SECTION HEADING: Titles and section intro blocks */
 .section-heading {
   max-width: 780px;
   margin-bottom: 38px;
@@ -243,6 +273,7 @@ h1 span {
   line-height: 1.8;
 }
 
+/* TWO-COLUMN GRIDS: About and Contact section layout */
 .about-grid,
 .contact-grid {
   display: grid;
@@ -250,6 +281,7 @@ h1 span {
   gap: 24px;
 }
 
+/* GLASS CARD: Reusable card style for information boxes */
 .glass-card {
   padding: 30px;
 }
@@ -260,6 +292,7 @@ h1 span {
   margin-bottom: 12px;
 }
 
+/* CHECK LIST: Styled list for services and support tasks */
 .check-list {
   list-style: none;
   display: grid;
@@ -274,6 +307,7 @@ h1 span {
   margin-right: 10px;
 }
 
+/* CARD GRIDS: Skills and Projects card layout */
 .skills-grid,
 .projects-grid {
   display: grid;
@@ -281,6 +315,7 @@ h1 span {
   gap: 22px;
 }
 
+/* SKILL CARD: Individual technical skill box */
 .skill-card {
   padding: 24px;
   display: flex;
@@ -292,20 +327,24 @@ h1 span {
   color: var(--primary);
 }
 
+/* EXPERIENCE TIMELINE: Work history layout */
 .timeline {
   display: grid;
   gap: 22px;
 }
 
+/* TIMELINE AND PROJECT CARDS: Shared padding for cards */
 .timeline-item,
 .project-card {
   padding: 28px;
 }
 
+/* PROJECT HOVER EFFECT: Changes border color on hover */
 .project-card:hover {
   border-color: var(--primary);
 }
 
+/* PROJECT ICON: Emoji/icon size inside project cards */
 .project-icon {
   font-size: 2.2rem;
   margin-bottom: 18px;
@@ -317,6 +356,7 @@ h1 span {
   gap: 18px;
 }
 
+/* FORM INPUTS: Textbox and textarea design */
 input,
 textarea {
   width: 100%;
@@ -329,6 +369,7 @@ textarea {
   font-family: inherit;
 }
 
+/* FOOTER: Bottom copyright area */
 .footer {
   max-width: 1180px;
   margin: auto;
@@ -337,6 +378,7 @@ textarea {
   color: var(--muted);
 }
 
+/* RESPONSIVE DESIGN: Mobile and tablet layout adjustments */
 /* Mobile */
 @media (max-width: 900px) {
   .nav-links {
