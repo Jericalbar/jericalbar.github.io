@@ -1,37 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeric Albar | IT Support Portfolio</title>
+  <meta name="description" content="Professional portfolio of Jeric Albar - IT Support Specialist, Network Troubleshooter, Printer Technician, CCTV Support, and Web Project Developer." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="loader" id="loader">
+    <div class="terminal-box">
+      <span class="terminal-dot"></span>
+      <span class="terminal-text">Loading Jeric Portfolio...</span>
+    </div>
+  </div>
 
-<meta charset="UTF-8">
+  <div class="cursor-glow"></div>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="#home" class="logo">
+        <span class="logo-mark">JA</span>
+        <span>Jeric Albar</span>
+      </a>
 
-<title>Jeric Albar Portfolio</title>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
 
-<link rel="stylesheet" href="style.css">
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <button class="theme-toggle" id="themeToggle">🌙</button>
+      </div>
+    </nav>
+  </header>
 
-  <section class="hero">
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-grid">
+        <div class="hero-content reveal">
+          <p class="eyebrow">IT Support • Network • Printer • CCTV</p>
+          <h1>
+            Hi, I'm <span>Jeric Albar</span><br>
+            <span class="typing" id="typingText"></span>
+          </h1>
+          <p class="hero-description">
+            I help businesses solve technical problems through reliable IT support, printer troubleshooting,
+            network diagnostics, CCTV assistance, remote support, and simple web-based tools.
+          </p>
 
-    <div class="hero-container">
+          <div class="hero-actions">
+            <a href="#projects" class="btn primary">View Projects</a>
+            <a href="#contact" class="btn secondary">Contact Me</a>
+          </div>
 
-        <div class="hero-image">
-
-            <img src="images/profile.png">
-
+          <div class="stats">
+            <div><strong>5+</strong><span>Years Experience</span></div>
+            <div><strong>IT</strong><span>Support Focus</span></div>
+            <div><strong>24/7</strong><span>Problem Solver</span></div>
+          </div>
         </div>
 
-        <div class="hero-content">
+        <div class="hero-card reveal">
+          <div class="profile-card">
+            <div class="profile-avatar">JA</div>
+            <h2>Technical Support Specialist</h2>
+            <p>Network • Printer • CCTV • Remote Troubleshooting</p>
+            <div class="card-lines">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="status">
+              <span class="pulse"></span>
+              Available for IT Support / VA / Helpdesk Roles
+            </div>
+          </div>
+        </div>
+      </div>
 
-  
-</head>
+      <div class="scroll-indicator">
+        <span></span>
+      </div>
+    </section>
 
-<body>
+    <section class="section about" id="about">
+      <div class="section-heading reveal">
+        <p class="eyebrow">About Me</p>
+        <h2>Reliable technical support with hands-on troubleshooting experience.</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="glass-card reveal">
+          <h3>Who I Am</h3>
+          <p>
+            I am an IT support professional with experience in printer troubleshooting, network setup,
+            CCTV support, remote assistance, Microsoft tools, Photoshop editing, and basic web development.
+          </p>
+          <p>
+            My goal is to provide fast, clear, and practical technical solutions for users and businesses.
+          </p>
+        </div>
+
+        <div class="glass-card reveal">
+          <h3>What I Do</h3>
+          <ul class="check-list">
+            <li>Diagnose printer, scanner, and driver issues</li>
+            <li>Troubleshoot Wi-Fi, LAN, router, and IP problems</li>
+            <li>Support CCTV installation and monitoring issues</li>
+            <li>Create simple web systems and dashboards</li>
+            <li>Assist users remotely with clear step-by-step support</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section skills" id="skills">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Skills</p>
+        <h2>Technical skills I use to solve real-world problems.</h2>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card reveal">
+          <div class="skill-top"><span>Printer Troubleshooting</span><b>95%</b></div>
+          <div class="bar"><span style="width:95%"></span></div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-top"><span>Network Support</span><b>90%</b></div>
+          <div class="bar"><span style="width:90%"></span></div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-top"><span>CCTV Support</span><b>88%</b></div>
+          <div class="bar"><span style="width:88%"></span></div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-top"><span>Remote Technical Support</span><b>92%</b></div>
+          <div class="bar"><span style="width:92%"></span></div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-top"><span>HTML / CSS / JavaScript</span><b>80%</b></div>
+          <div class="bar"><span style="width:80%"></span></div>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-top"><span>Microsoft Excel / Tools</span><b>85%</b></div>
+          <div class="bar"><span style="width:85%"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section experience" id="experience">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Experience</p>
+        <h2>Support experience across hardware, software, and network systems.</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <span class="timeline-dot"></span>
+          <div>
+            <h3>IT Support / Technical Support</h3>
+            <p>Diagnosed and resolved common hardware, software, printer, CCTV, and network problems for users.</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <span class="timeline-dot"></span>
+          <div>
+            <h3>Printer & Scanner Troubleshooting</h3>
+            <p>Handled driver installation, connectivity, paper jam, print quality, resetter, and network printer issues.</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <span class="timeline-dot"></span>
+          <div>
+            <h3>Network & CCTV Support</h3>
+            <p>Assisted with IP configuration, router/AP setup, Wi-Fi issues, cabling checks, DVR/NVR, and camera monitoring.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section projects" id="projects">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Projects</p>
+        <h2>Featured portfolio projects.</h2>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card reveal">
+          <div class="project-icon">🖨️</div>
+          <h3>Ink Monitoring System</h3>
+          <p>A web-based dashboard for monitoring printer ink stock, printer names, stock levels, and alerts.</p>
+          <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-icon">🌐</div>
+          <h3>Network Troubleshooting Guide</h3>
+          <p>A documentation project for diagnosing ping, IP conflicts, router/AP mode, and Wi-Fi connectivity issues.</p>
+          <div class="tags"><span>Networking</span><span>Support</span><span>Guide</span></div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-icon">📹</div>
+          <h3>CCTV Support Workflow</h3>
+          <p>A troubleshooting checklist for CCTV camera, DVR/NVR, IP camera, and monitoring problems.</p>
+          <div class="tags"><span>CCTV</span><span>Hardware</span><span>Support</span></div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-icon">📊</div>
+          <h3>Editable Forms & Excel Automation</h3>
+          <p>Converted forms and documents into editable formats to make business processing faster and easier.</p>
+          <div class="tags"><span>Excel</span><span>PDF</span><span>Automation</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section services" id="services">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Services</p>
+        <h2>How I can help your business.</h2>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <h3>Helpdesk Support</h3>
+          <p>Remote troubleshooting, user assistance, basic system support, and clear technical guidance.</p>
+        </div>
+        <div class="service-card reveal">
+          <h3>Printer Support</h3>
+          <p>Driver installation, network printer setup, print quality checks, scanner setup, and error troubleshooting.</p>
+        </div>
+        <div class="service-card reveal">
+          <h3>Network Support</h3>
+          <p>Wi-Fi, LAN, IP address, router, access point, cabling, and connection troubleshooting.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="contact-grid">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Contact</p>
+          <h2>Let’s work together.</h2>
+          <p class="contact-text">
+            Need IT support, printer troubleshooting, network help, or a simple website project?
+            Send me a message.
+          </p>
+        </div>
+
+        <form class="contact-form reveal" onsubmit="sendMessage(event)">
+          <label>
+            Name
+            <input type="text" id="name" placeholder="Your name" required>
+          </label>
+          <label>
+            Email
+            <input type="email" id="email" placeholder="your@email.com" required>
+          </label>
+          <label>
+            Message
+            <textarea id="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+          </label>
+          <button class="btn primary" type="submit">Send Message</button>
+          <p class="form-note">This opens your email app using mailto.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Jeric Albar. Built for GitHub Pages.</p>
+    <div class="footer-links">
+      <a href="#home">Back to top</a>
+      <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:your-email@example.com">Email</a>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
-
 </body>
-
 </html>
-
-  
