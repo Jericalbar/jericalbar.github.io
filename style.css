@@ -701,3 +701,32 @@ textarea:focus {
     flex-direction: column;
   }
 }
+.hero-image{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    animation:float 6s ease-in-out infinite;
+}
+
+.hero-image img{
+    width:100%;
+    max-width:500px;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    border-radius:30px;
+    border:2px solid rgba(59,130,246,.4);
+    box-shadow:
+        0 0 30px rgba(59,130,246,.25),
+        0 0 80px rgba(59,130,246,.15);
+    transition:.4s ease;
+}
+
+.hero-image img:hover{
+    transform:scale(1.03);
+}
+
+@keyframes float{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-15px);}
+    100%{transform:translateY(0);}
+}
