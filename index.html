@@ -1,5 +1,12 @@
+<!--
+  Portfolio Website
+  Owner/Name: Jeric Albar
+  File: index.html
+  Remarks: Main HTML structure for Jeric Albar's IT Support Portfolio.
+-->
 <!DOCTYPE html>
 <html lang="en">
+<!-- HEAD SECTION: Page title, fonts, meta description, and CSS link -->
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,8 +17,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
+<!-- BODY SECTION: Visible website content starts here -->
 <body>
 
+<!-- HEADER / NAVIGATION: Logo and menu links -->
 <header class="site-header">
   <nav class="navbar">
     <a href="#home" class="logo">
@@ -30,10 +39,13 @@
   </nav>
 </header>
 
+<!-- MAIN CONTENT: All website sections are inside this main tag -->
 <main>
+  <!-- HOME / HERO SECTION: Introduction, typing text, buttons, and profile image -->
   <section class="hero section" id="home">
     <div class="hero-grid">
 
+      <!-- LEFT HERO CONTENT: Name, role, description, and call-to-action buttons -->
       <div class="hero-content">
         <p class="eyebrow">HELLO, I'M</p>
 
@@ -55,12 +67,14 @@
         </div>
       </div>
 
+      <!-- RIGHT HERO IMAGE: Profile photo of Jeric Albar -->
       <div class="hero-image">
         <img src="images/profile.png" alt="Jeric Albar">
       </div>
 
     </div>
 
+    <!-- STATS SECTION: Quick highlights below hero area -->
     <div class="stats">
       <div><strong>5+</strong><span>Years Experience</span></div>
       <div><strong>IT</strong><span>Support Focus</span></div>
@@ -68,6 +82,7 @@
     </div>
   </section>
 
+  <!-- ABOUT SECTION: Short introduction and services summary -->
   <section class="section about" id="about">
     <div class="section-heading">
       <p class="eyebrow">About Me</p>
@@ -97,6 +112,7 @@
     </div>
   </section>
 
+  <!-- SKILLS SECTION: Technical skills and percentages -->
   <section class="section skills" id="skills">
     <div class="section-heading">
       <p class="eyebrow">Skills</p>
@@ -113,6 +129,7 @@
     </div>
   </section>
 
+  <!-- EXPERIENCE SECTION: Work experience and support background -->
   <section class="section experience" id="experience">
     <div class="section-heading">
       <p class="eyebrow">Experience</p>
@@ -137,6 +154,7 @@
     </div>
   </section>
 
+  <!-- PROJECTS SECTION: Featured portfolio projects -->
   <section class="section projects" id="projects">
     <div class="section-heading">
       <p class="eyebrow">Projects</p>
@@ -164,6 +182,7 @@
     </div>
   </section>
 
+  <!-- CONTACT SECTION: Contact text and inquiry form -->
   <section class="section contact" id="contact">
     <div class="contact-grid">
       <div class="section-heading">
@@ -184,10 +203,12 @@
   </section>
 </main>
 
+<!-- FOOTER SECTION: Copyright and GitHub Pages note -->
 <footer class="footer">
   <p>© <span id="year"></span> Jeric Albar. Built for GitHub Pages.</p>
 </footer>
 
+<!-- JAVASCRIPT LINK: Loads script.js for typing effect, year, and form mailto -->
 <script src="script.js"></script>
 </body>
 </html>
