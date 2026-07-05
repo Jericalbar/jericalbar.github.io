@@ -1,7 +1,17 @@
+/*
+  Portfolio Website
+  Owner/Name: Jeric Albar
+  File: script.js
+  Remarks: JavaScript for typing animation, current year, and contact form email action.
+*/
+
+// TYPING TEXT ELEMENT: Gets the span where the animated job title appears
 const typingText = document.getElementById("typingText");
 
+// FOOTER YEAR: Automatically updates the copyright year
 document.getElementById("year").textContent = new Date().getFullYear();
 
+// TYPING PHRASES: List of job titles shown in the hero section
 const phrases = [
   "IT Support Specialist",
   "Network Troubleshooter",
@@ -10,10 +20,12 @@ const phrases = [
   "Remote Helpdesk Assistant"
 ];
 
+// TYPING VARIABLES: Track current phrase, letter position, and delete mode
 let phraseIndex = 0;
 let charIndex = 0;
 let deleting = false;
 
+// TYPING FUNCTION: Types and deletes each phrase smoothly
 function typeEffect() {
   const currentPhrase = phrases[phraseIndex];
 
@@ -39,8 +51,10 @@ function typeEffect() {
   setTimeout(typeEffect, deleting ? 45 : 80);
 }
 
+// START TYPING EFFECT: Runs the typing animation when the page loads
 typeEffect();
 
+// CONTACT FORM FUNCTION: Opens the visitor email app using mailto
 function sendMessage(event) {
   event.preventDefault();
 
