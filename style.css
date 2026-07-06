@@ -450,12 +450,17 @@ textarea {
    Developer : Jeric Albar
 =================================================== */
 
+/* ===================================================
+   PROJECT FOLDER
+   Developer : Jeric Albar
+=================================================== */
+
 .project-folder{
     background: var(--card);
     border: 1px solid var(--card-border);
-    border-radius: 20px;
-    padding: 20px;
-    margin-bottom: 20px;
+    border-radius: 18px;
+    padding: 18px;
+    margin-bottom: 18px;
 }
 
 .project-folder summary{
@@ -469,33 +474,34 @@ textarea {
 
 .folder-title h3{
     color: var(--primary);
-    font-size: 24px;
-    margin-bottom: 10px;
+    font-size: 20px;
+    margin-bottom: 5px;
 }
 
 .folder-title p{
     color: var(--muted);
+    font-size: 14px;
     margin: 0;
 }
 
 .project-gallery{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    margin-top: 25px;
+    grid-template-columns: repeat(2,1fr);
+    gap: 12px;
+    margin-top: 18px;
 }
 
 .project-gallery img{
     width: 100%;
-    height: 22px;
+    height: 140px;   /* Mas maliit */
     object-fit: cover;
-    border-radius: 15px;
+    border-radius: 12px;
     border: 1px solid rgba(255,255,255,.15);
     cursor: pointer;
     transition: .3s;
 }
 
 .project-gallery img:hover{
-    transform: scale(1.05);
+    transform: scale(1.03);
     border-color: var(--primary);
 }
