@@ -1,301 +1,239 @@
-<!--
-  Portfolio Website
-  Owner/Name: Jeric Albar.
-  File: index.html
-  Remarks: Main HTML structure for Jeric Albar's IT Support Portfolio.
--->
 <!DOCTYPE html>
 <html lang="en">
-<!-- HEAD SECTION: Page title, fonts, meta description, and CSS link -->
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jeric Albar | IT Support Portfolio</title>
-  <meta name="description" content="Professional portfolio of Jeric Albar - IT Support Specialist, Network Troubleshooter, Printer Technician, CCTV Support, and Web Project Developer." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
-<!-- BODY SECTION: Visible website content starts here -->
 <body>
 
-<!-- HEADER / NAVIGATION: Logo and menu links -->
-<header class="site-header">
-  <nav class="navbar">
-    <a href="#home" class="logo">
-      <span class="logo-mark">JA</span>
-      <span>Jeric Albar</span>
-    </a>
+  <header class="header">
+    <nav class="navbar">
+      <h2 class="logo">Jeric<span>.</span></h2>
 
-    <div class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
-</header>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
 
-<!-- MAIN CONTENT: All website sections are inside this main tag -->
-<main>
-  <!-- HOME / HERO SECTION: Introduction, typing text, buttons, and profile image -->
-  <section class="hero section" id="home">
-    <div class="hero-grid">
+      <button class="menu-btn" id="menuBtn">☰</button>
+    </nav>
+  </header>
 
-      <!-- LEFT HERO CONTENT: Name, role, description, and call-to-action buttons -->
-      <div class="hero-content">
-        <p class="eyebrow">HELLO, I'M</p>
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <p class="tagline">IT Support Specialist</p>
+      <h1>Hello, I'm <span>Jeric Albar</span></h1>
+      <h3><span id="typingText"></span></h3>
 
-        <h1>Jeric <span>Albar</span></h1>
+      <p class="hero-desc">
+        I help businesses solve technical problems through reliable IT support,
+        printer troubleshooting, network diagnostics, CCTV support, remote assistance,
+        Photoshop editing, and AI automation.
+      </p>
 
-        <h2 class="typing-wrap">
-          <span id="typingText"></span>
-        </h2>
-
-    <p class="hero-description">
-Experienced IT Support Specialist with expertise in technical troubleshooting, network infrastructure, printer systems, CCTV solutions, AI automation, remote support, and web technologies. I help businesses improve efficiency through innovative, reliable, and technology-driven solutions.
-</p>
-
-        <div class="hero-actions">
-          <a href="#projects" class="btn primary">View Projects</a>
-          <a href="#contact" class="btn secondary">Contact Me</a>
-        </div>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn primary">Contact Me</a>
+        <a href="#projects" class="btn secondary">View Projects</a>
       </div>
-
-      <!-- RIGHT HERO IMAGE: Profile photo of Jeric Albar -->
-      <div class="hero-image">
-        <img src="images/profile.png" alt="Jeric Albar">
-      </div>
-
     </div>
 
-    <!-- STATS SECTION: Quick highlights below hero area -->
-    <div class="stats">
-      <div><strong>7+</strong><span>Years Experience</span></div>
-      <div><strong>IT</strong><span>Support Focus</span></div>
-      <div><strong>24/7</strong><span>Problem Solver</span></div>
+    <div class="hero-image">
+      <div class="image-card">
+        <img src="images/profile.jpg" alt="Jeric Albar" />
+      </div>
     </div>
   </section>
 
-  <!-- ABOUT SECTION: Short introduction and services summary -->
-  <section class="section about" id="about">
-    <div class="section-heading">
-      <p class="eyebrow">About Me</p>
-      <h2>Reliable technical support with hands-on troubleshooting experience.</h2>
-    </div>
+  <section class="section" id="about">
+    <h2 class="section-title">About Me</h2>
 
     <div class="about-grid">
-      <div class="glass-card">
-       <h3>Who I Am</h3>
-
-<p>
-I am a dedicated IT Support Specialist with over five years of hands-on experience in providing technical support, troubleshooting hardware and software issues, managing network infrastructure, maintaining printer systems, and supporting CCTV installations. I am passionate about delivering reliable, efficient, and customer-focused technology solutions that help businesses operate smoothly.
-</p>
-
-<p>
-In addition to my technical expertise, I leverage AI-powered automation, remote support tools, and modern web technologies to streamline workflows, improve productivity, and enhance the overall user experience. I am committed to continuous learning and staying current with emerging technologies to provide innovative and effective IT solutions.
-</p>
+      <div class="about-text card">
+        <h3>Who I Am</h3>
+        <p>
+          I am a dedicated IT Support Specialist with experience in troubleshooting
+          hardware, software, network, printer, CCTV, and remote technical issues.
+          I focus on providing fast, reliable, and professional support to help
+          businesses stay productive.
+        </p>
       </div>
 
-      <div class="glass-card">
-        <h3>What I Do</h3>
-        <ul class="check-list">
-          <li>Diagnose printer, scanner, and driver issues</li>
-          <li>Troubleshoot Wi-Fi, LAN, router, and IP problems</li>
-          <li>Support CCTV installation and monitoring issues</li>
-          <li>Create simple web systems and dashboards</li>
-          <li>Assist users remotely with clear step-by-step support</li>
-         <li>Photoshop </li>
-           <li>AI Automation & Productivity Tools </li>
-
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS SECTION: Technical skills and percentages -->
-  <section class="section skills" id="skills">
-    <div class="section-heading">
-      <p class="eyebrow">Skills</p>
-      <h2>Technical skills I use to solve real-world problems.</h2>
-    </div>
-
-    <div class="skills-grid">
-      <div class="skill-card"><span>Printer Troubleshooting</span><b></b></div>
-      <div class="skill-card"><span>Network Support</span><b></b></div>
-      <div class="skill-card"><span>CCTV Support</span><b></b></div>
-      <div class="skill-card"><span>Remote Technical Support</span><b></b></div>
-      <div class="skill-card"><span>HTML / CSS / JavaScript</span><b></b></div>
-      <div class="skill-card"><span>Microsoft Excel / Tools</span><b></b></div>
-       <div class="skill-card"><span>Photoshop</span><b></b></div>
-       <div class="skill-card"><span>AI Automation</span><b></b></div>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE SECTION: Work experience and support background -->
-  <section class="section experience" id="experience">
-    <div class="section-heading">
-      <p class="eyebrow">Experience</p>
-      <h2>Support experience across hardware, software, and network systems.</h2>
-    </div>
-
- <div class="timeline">
-
-    <div class="timeline-item reveal">
-        <h3>IT Staff</h3>
-        <h4>Supima Holding Inc.</h4>
-        <small>May 2023 – Present</small>
-
-        <p>
-            Provided IT support for hardware, software, printers, networking,
-            CCTV systems, AI-powered automation, Photoshop design, remote
-            technical support, and IT inventory management.
-        </p>
-    </div>
-
-    <div class="timeline-item reveal">
-        <h3>IT Support</h3>
-        <h4>Ultimax Building Solutions Inc.</h4>
-        <small>April 2022 – May 2023</small>
-
-        <p>
-            Delivered technical support for computers, printers, CCTV systems,
-            LAN and fiber-optic cabling, operating system installation,
-            remote troubleshooting, and desktop maintenance.
-        </p>
-    </div>
-
-    <div class="timeline-item reveal">
-        <h3>IT Associate</h3>
-        <h4>Byaheros Express</h4>
-        <small>July 2020 – April 2022</small>
-
-        <p>
-            Supported office users by troubleshooting hardware, software,
-            networking, CCTV systems, and branch technical operations while
-            maintaining reliable IT services.
-        </p>
-    </div>
-
-    <div class="timeline-item reveal">
-        <h3>IT Associate</h3>
-        <h4>ATAW Marketing</h4>
-        <small>January 2019 – November 2020</small>
-
-        <p>
-            Installed and maintained computer systems, POS devices,
-            CCTV equipment, operating systems, and provided hardware
-            troubleshooting and inventory reporting.
-        </p>
-    </div>
-
-</div>
-
-</div>
-  </section>
-
-
-<!-- ======================================================
-     PROJECTS SECTION
-     Developer : Jeric Albar
-====================================================== -->
-
-<section class="section projects" id="projects">
-
-    <div class="section-heading">
-        <p class="eyebrow">PROJECTS</p>
-        <h2>My Professional Portfolio</h2>
-        <p>
-            A collection of my IT support, graphic design,
-            and technical projects.
-        </p>
-    </div>
-
-    <div class="projects-grid">
-
-  <!-- PROJECT FOLDER: Cravings To Go -->
-  <details class="project-folder" id="cravingsFolder">
-
-    <summary>
-      <div class="folder-title">
-        <h3>📁 Cravings To Go</h3>
-        <p>Adobe Photoshop Graphic Design Collection</p>
-        <span>Click to open</span>
-      </div>
-    </summary>
-
-    <div class="project-gallery">
-      <img src="images/projects/churros-supremacy.jpg" alt="Churros Supremacy">
-      <img src="images/projects/french-fries-float.jpg" alt="French Fries Float">
-      <img src="images/projects/french-fries-menu.jpg" alt="French Fries Menu">
-      <img src="images/projects/premium-menu.jpg" alt="Premium Menu">
-    </div>
-
-  </details>
-
-</div>
-  <!-- CONTACT SECTION: Contact text and inquiry form -->
- <!-- =======================================================
-     CONTACT SECTION
-     Developer: Jeric Albar
-     Change your contact details below.
-======================================================== -->
-
-<section class="section contact" id="contact">
-
-    <div class="contact-grid">
-
-        <div class="section-heading">
-
-            <p class="eyebrow">CONTACT</p>
-
-            <h2>Let's Work Together</h2>
-
-            <p class="contact-text">
-                If you're looking for an IT Support Specialist,
-                feel free to contact me.
-            </p>
-
-            <div class="contact-info">
-
-                <!-- ===== CHANGE YOUR EMAIL HERE ===== -->
-                <p>📧 <strong>Email:</strong> Jericalbar@gmail.com</p>
-
-                <!-- ===== CHANGE YOUR PHONE NUMBER HERE ===== -->
-                <p>📱 <strong>Phone:</strong> +63 969 6488 009</p>
-
-                <!-- ===== CHANGE YOUR LOCATION HERE ===== -->
-                <p>📍 <strong>Location:</strong> Philippines</p>
-
-                <!-- ===== CHANGE YOUR GITHUB LINK HERE ===== -->
-                <p>
-                    💻 <strong>GitHub:</strong>
-                    <a href="https://jericalbar.github.io/">
-                        github.com/jericalbar.github.io
-                    </a>
-                </p>
-
-                <!-- ===== CHANGE YOUR LINKEDIN HERE ===== -->
-                <p>
-                    💼 <strong>LinkedIn:</strong>
-                    <a href="https://www.linkedin.com/in/jeric-albar-6a8169190/">
-                       https://www.linkedin.com/in/jeric-albar-6a8169190/
-                    </a>
-                </p>
-
-            </div>
-
+      <div class="stats">
+        <div class="stat-card">
+          <h3>5+</h3>
+          <p>Years Experience</p>
         </div>
 
-<!-- FOOTER SECTION: Copyright and GitHub Pages note -->
-<footer class="footer">
-  <p>© <span id="year"></span> Jeric Albar. Built for GitHub Pages.</p>
-</footer>
+        <div class="stat-card">
+          <h3>100+</h3>
+          <p>Devices Supported</p>
+        </div>
 
-<!-- JAVASCRIPT LINK: Loads script.js for typing effect, year, and form mailto -->
-<script src="script.js"></script>
+        <div class="stat-card">
+          <h3>24/7</h3>
+          <p>Reliable Support</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="experience">
+    <h2 class="section-title">Experience</h2>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <h3>IT Support / Technical Support</h3>
+        <span>Supima Holdings Inc</span>
+        <p>
+          Provided technical support for hardware, software, network, printer,
+          CCTV, remote assistance, and ticketing tasks.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>Printer Troubleshooting</h3>
+        <span>Technical Support</span>
+        <p>
+          Diagnosed printer issues including connection problems, driver errors,
+          paper jams, ink problems, and network printing issues.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>Photoshop Editing</h3>
+        <span>Creative Support</span>
+        <p>
+          Created and edited professional images, layouts, and visual materials
+          using Photoshop.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>AI Automation</h3>
+        <span>Productivity Support</span>
+        <p>
+          Assisted with simple automation workflows to improve productivity and
+          reduce repetitive tasks.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>Hardware Support</h3>
+        <div class="bar"><span style="width: 95%;"></span></div>
+      </div>
+
+      <div class="skill-card">
+        <h3>Networking</h3>
+        <div class="bar"><span style="width: 90%;"></span></div>
+      </div>
+
+      <div class="skill-card">
+        <h3>Printer Troubleshooting</h3>
+        <div class="bar"><span style="width: 95%;"></span></div>
+      </div>
+
+      <div class="skill-card">
+        <h3>CCTV Support</h3>
+        <div class="bar"><span style="width: 88%;"></span></div>
+      </div>
+
+      <div class="skill-card">
+        <h3>Remote Assistance</h3>
+        <div class="bar"><span style="width: 92%;"></span></div>
+      </div>
+
+      <div class="skill-card">
+        <h3>Photoshop</h3>
+        <div class="bar"><span style="width: 85%;"></span></div>
+      </div>
+
+      <div class="skill-card">
+        <h3>Excel / Microsoft Tools</h3>
+        <div class="bar"><span style="width: 90%;"></span></div>
+      </div>
+
+      <div class="skill-card">
+        <h3>AI Automation</h3>
+        <div class="bar"><span style="width: 80%;"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <h2 class="section-title">Projects</h2>
+
+    <div class="folder-box" id="folderBox">
+      <div class="folder-icon">📁</div>
+      <h3>My Projects</h3>
+      <p>Click to view project gallery</p>
+    </div>
+
+    <div class="project-gallery" id="projectGallery">
+      <div class="project-card">
+        <img src="images/project1.jpg" alt="Project 1" />
+        <h3>IT Support Project</h3>
+      </div>
+
+      <div class="project-card">
+        <img src="images/project2.jpg" alt="Project 2" />
+        <h3>Printer Troubleshooting</h3>
+      </div>
+
+      <div class="project-card">
+        <img src="images/project3.jpg" alt="Project 3" />
+        <h3>CCTV Support</h3>
+      </div>
+
+      <div class="project-card">
+        <img src="images/project4.jpg" alt="Project 4" />
+        <h3>Photoshop Project</h3>
+      </div>
+    </div>
+  </section>
+
+  <section class="section services">
+    <h2 class="section-title">What I Do</h2>
+
+    <div class="services-grid">
+      <div class="service-card">Printer Troubleshooting</div>
+      <div class="service-card">Network Diagnostics</div>
+      <div class="service-card">CCTV Support</div>
+      <div class="service-card">Remote Assistance</div>
+      <div class="service-card">Photoshop Editing</div>
+      <div class="service-card">AI Automation</div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <h2 class="section-title">Contact Me</h2>
+
+    <div class="contact-card">
+      <h3>Let's Work Together</h3>
+      <p>Email: your-email@gmail.com</p>
+      <p>Phone: 09XX-XXX-XXXX</p>
+      <p>GitHub: github.com/jericalbar</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Jeric Albar. All Rights Reserved.</p>
+  </footer>
+
+  <button id="backToTop">↑</button>
+
 </body>
 </html>
