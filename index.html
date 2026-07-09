@@ -82,93 +82,92 @@
     </div>
   </section>
 
-  <section class="section" id="experience">
-    <h2 class="section-title">Experience</h2>
+  .experience {
+  padding: 90px 8%;
+  background: #0f172a;
+}
 
-    <div class="timeline">
-      <div class="timeline-item">
-        <h3>IT Support / Technical Support</h3>
-        <span>Supima Holdings Inc</span>
-        <p>
-          Provided technical support for hardware, software, network, printer,
-          CCTV, remote assistance, and ticketing tasks.
-        </p>
-      </div>
+.section-title {
+  text-align: center;
+  font-size: 38px;
+  color: #fff;
+  margin-bottom: 55px;
+  position: relative;
+}
 
-      <div class="timeline-item">
-        <h3>Printer Troubleshooting</h3>
-        <span>Technical Support</span>
-        <p>
-          Diagnosed printer issues including connection problems, driver errors,
-          paper jams, ink problems, and network printing issues.
-        </p>
-      </div>
+.section-title::after {
+  content: "";
+  width: 70px;
+  height: 4px;
+  background: #38bdf8;
+  display: block;
+  margin: 12px auto 0;
+  border-radius: 10px;
+}
 
-      <div class="timeline-item">
-        <h3>Photoshop Editing</h3>
-        <span>Creative Support</span>
-        <p>
-          Created and edited professional images, layouts, and visual materials
-          using Photoshop.
-        </p>
-      </div>
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
 
-      <div class="timeline-item">
-        <h3>AI Automation</h3>
-        <span>Productivity Support</span>
-        <p>
-          Assisted with simple automation workflows to improve productivity and
-          reduce repetitive tasks.
-        </p>
-      </div>
-    </div>
-  </section>
+.experience-card {
+  display: flex;
+  gap: 22px;
+  padding: 32px;
+  background: linear-gradient(145deg, #1e293b, #111827);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 22px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  transition: 0.3s ease;
+}
 
-  <section class="section" id="skills">
-    <h2 class="section-title">Skills</h2>
+.experience-card:hover {
+  transform: translateY(-10px);
+  border-color: #38bdf8;
+  box-shadow: 0 20px 45px rgba(56, 189, 248, 0.18);
+}
 
-    <div class="skills-grid">
-      <div class="skill-card">
-        <h3>Hardware Support</h3>
-        <div class="bar"><span style="width: 95%;"></span></div>
-      </div>
+.experience-icon {
+  min-width: 58px;
+  height: 58px;
+  background: rgba(56, 189, 248, 0.12);
+  color: #38bdf8;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+}
 
-      <div class="skill-card">
-        <h3>Networking</h3>
-        <div class="bar"><span style="width: 90%;"></span></div>
-      </div>
+.experience-card h3 {
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 6px;
+}
 
-      <div class="skill-card">
-        <h3>Printer Troubleshooting</h3>
-        <div class="bar"><span style="width: 95%;"></span></div>
-      </div>
+.experience-card span {
+  color: #38bdf8;
+  font-weight: 700;
+  font-size: 15px;
+}
 
-      <div class="skill-card">
-        <h3>CCTV Support</h3>
-        <div class="bar"><span style="width: 88%;"></span></div>
-      </div>
+.experience-card p {
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-top: 12px;
+  font-size: 15px;
+}
 
-      <div class="skill-card">
-        <h3>Remote Assistance</h3>
-        <div class="bar"><span style="width: 92%;"></span></div>
-      </div>
+@media (max-width: 900px) {
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
 
-      <div class="skill-card">
-        <h3>Photoshop</h3>
-        <div class="bar"><span style="width: 85%;"></span></div>
-      </div>
-
-      <div class="skill-card">
-        <h3>Excel / Microsoft Tools</h3>
-        <div class="bar"><span style="width: 90%;"></span></div>
-      </div>
-
-      <div class="skill-card">
-        <h3>AI Automation</h3>
-        <div class="bar"><span style="width: 80%;"></span></div>
-      </div>
-    </div>
-  </section>
+  .experience-card {
+    padding: 26px;
+  }
+}
 
   <section class="section" id="projects">
     <h2 class="section-title">Projects</h2>
