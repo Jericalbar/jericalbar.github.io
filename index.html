@@ -1,155 +1,236 @@
-<!-- =========================================================
-     EXPERIENCE SECTION
-     Purpose:
-     Display complete professional work history.
-     Edit only if you need to add a new company.
-========================================================== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeric Albar | IT Support Portfolio</title>
 
-<section class="section" id="experience">
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
 
-    <h2 class="section-title">Professional Experience</h2>
+  <header class="header">
+    <nav class="navbar">
+      <h2 class="logo">Jeric<span>.</span></h2>
 
-    <div class="timeline">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
 
-        <!-- =========================
-             CURRENT COMPANY
-        ========================== -->
-        <div class="timeline-item">
+      <button class="menu-btn" id="menuBtn">☰</button>
+    </nav>
+  </header>
 
-            <span class="year">May 2023 - Present</span>
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <p class="tagline">IT Support Specialist</p>
+      <h1>Hello, I'm <span>Jeric Albar</span></h1>
+      <h3><span id="typingText"></span></h3>
 
-            <h3>IT Staff</h3>
+      <p class="hero-desc">
+        I help businesses solve technical problems through reliable IT support,
+        printer troubleshooting, network diagnostics, CCTV support, remote assistance,
+        Photoshop editing, and AI automation.
+      </p>
 
-            <h4>Supima Holding Inc.</h4>
-
-            <p>
-                • Provided first-line IT support through chat, email, remote assistance, and on-site support.
-            </p>
-
-            <p>
-                • Installed and configured desktop computers, operating systems, and business applications.
-            </p>
-
-            <p>
-                • Installed and maintained CCTV systems, including NVR configuration and monthly backups.
-            </p>
-
-            <p>
-                • Performed LAN installation and fiber optic cabling.
-            </p>
-
-            <p>
-                • Managed IT inventory, ticketing tasks, and user requests.
-            </p>
-
-            <p>
-                • Designed company IDs and internal graphics using Adobe Photoshop.
-            </p>
-
-        </div>
-
-        <!-- =========================
-             ULTIMAX
-        ========================== -->
-
-        <div class="timeline-item">
-
-            <span class="year">Apr 2022 - May 2023</span>
-
-            <h3>IT Support</h3>
-
-            <h4>Ultimax Building Solutions Inc.</h4>
-
-            <p>
-                • Installed and reformatted desktop computers.
-            </p>
-
-            <p>
-                • Diagnosed printer, telephone, internet, and hardware issues.
-            </p>
-
-            <p>
-                • Performed CCTV monitoring and backup.
-            </p>
-
-            <p>
-                • Conducted remote troubleshooting and system diagnostics.
-            </p>
-
-        </div>
-
-        <!-- =========================
-             BYAHEROS
-        ========================== -->
-
-        <div class="timeline-item">
-
-            <span class="year">Jul 2020 - Apr 2022</span>
-
-            <h3>IT Associate</h3>
-
-            <h4>Byaheros Express</h4>
-
-            <p>
-                • Supported office users with hardware and software troubleshooting.
-            </p>
-
-            <p>
-                • Installed CCTV systems and LAN connections.
-            </p>
-
-            <p>
-                • Managed CCTV monitoring and backups.
-            </p>
-
-            <p>
-                • Resolved software bugs and system issues.
-            </p>
-
-            <p>
-                • Supported TrueMoney fund transfer systems.
-            </p>
-
-        </div>
-
-        <!-- =========================
-             ATAW
-        ========================== -->
-
-        <div class="timeline-item">
-
-            <span class="year">Jan 2019 - Nov 2020</span>
-
-            <h3>IT Associate</h3>
-
-            <h4>ATAW Marketing</h4>
-
-            <p>
-                • Troubleshot hardware and software issues.
-            </p>
-
-            <p>
-                • Installed operating systems and applications.
-            </p>
-
-            <p>
-                • Assembled and repaired desktop computers.
-            </p>
-
-            <p>
-                • Installed POS systems and peripherals.
-            </p>
-
-            <p>
-                • Created inventory and wholesale reports.
-            </p>
-
-            <p>
-                • Installed CCTV systems and performed monthly backups.
-            </p>
-
-        </div>
-
+      <div class="hero-buttons">
+        <a href="#contact" class="btn primary">Contact Me</a>
+        <a href="#projects" class="btn secondary">View Projects</a>
+      </div>
     </div>
 
-</section>
+    <div class="hero-image">
+      <div class="image-card">
+        <img src="images/profile.png" alt="Jeric Albar" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about-grid">
+      <div class="about-text card">
+        <h3>Who I Am</h3>
+        <p>
+          I am an experienced IT Support Specialist with over five years of hands-on experience delivering technical solutions across hardware, software, networking, printers, CCTV systems, and remote support. I am committed to diagnosing and resolving technical issues efficiently while ensuring minimal downtime and maximum productivity. With a strong focus on reliability, customer service, and continuous improvement, I strive to provide high-quality IT support that helps organizations maintain secure, stable, and efficient technology environments.
+        </p>
+      </div>
+
+      <div class="stats">
+        <div class="stat-card">
+          <h3>5+</h3>
+          <p>Years Experience</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>100+</h3>
+          <p>Devices Supported</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>24/7</h3>
+          <p>Reliable Support</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="experience">
+    <h2 class="section-title">Experience</h2>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <h3>IT Support / Technical Support</h3>
+        <span>Supima Holdings Inc</span>
+        <p>
+          Provided technical support for hardware, software, network, printer,
+          CCTV, remote assistance, and ticketing tasks.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>Printer Troubleshooting</h3>
+        <span>Technical Support</span>
+        <p>
+          Diagnosed printer issues including connection problems, driver errors,
+          paper jams, ink problems, and network printing issues.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>Photoshop Editing</h3>
+        <span>Creative Support</span>
+        <p>
+          Created and edited professional images, layouts, and visual materials
+          using Photoshop.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>AI Automation</h3>
+        <span>Productivity Support</span>
+        <p>
+          Assisted with simple automation workflows to improve productivity and
+          reduce repetitive tasks.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>Hardware Support</h3>
+        <div class="bar"><span style="width: 95%;"></span></div>
+      </div>
+
+      <div class="skill-card">
+        <h3>Networking</h3>
+        <div class="bar"><span style="width: 90%;"></span></div>
+      </div>
+
+      <div class="skill-card">
+        <h3>Printer Troubleshooting</h3>
+        <div class="bar"><span style="width: 95%;"></span></div>
+      </div>
+
+      <div class="skill-card">
+        <h3>CCTV Support</h3>
+        <div class="bar"><span style="width: 88%;"></span></div>
+      </div>
+
+      <div class="skill-card">
+        <h3>Remote Assistance</h3>
+        <div class="bar"><span style="width: 92%;"></span></div>
+      </div>
+
+      <div class="skill-card">
+        <h3>Photoshop</h3>
+        <div class="bar"><span style="width: 85%;"></span></div>
+      </div>
+
+      <div class="skill-card">
+        <h3>Excel / Microsoft Tools</h3>
+        <div class="bar"><span style="width: 90%;"></span></div>
+      </div>
+
+      <div class="skill-card">
+        <h3>AI Automation</h3>
+        <div class="bar"><span style="width: 80%;"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <h2 class="section-title">Projects</h2>
+
+    <div class="folder-box" id="folderBox">
+      <div class="folder-icon">📁</div>
+      <h3>Cravings To Go</h3>
+      <p>Click to view project gallery</p>
+    </div>
+
+    <div class="project-gallery" id="projectGallery">
+      <div class="project-card">
+        <img src="images/project1.jpg" alt="Project 1" />
+        <h3>Facebook Posting </h3>
+      </div>
+
+      <div class="project-card">
+        <img src="images/project2.jpg" alt="Project 2" />
+        <h3>Facebook Posting</h3>
+      </div>
+
+      <div class="project-card">
+        <img src="images/project3.jpg" alt="Project 3" />
+        <h3>Facebook Posting</h3>
+      </div>
+
+      <div class="project-card">
+        <img src="images/project4.jpg" alt="Project 4" />
+        <h3>Facebook Posting</h3>
+      </div>
+    </div>
+  </section>
+
+  <section class="section services">
+    <h2 class="section-title">What I Do</h2>
+
+    <div class="services-grid">
+      <div class="service-card">Printer Troubleshooting</div>
+      <div class="service-card">Network Diagnostics</div>
+      <div class="service-card">CCTV Support</div>
+      <div class="service-card">Remote Assistance</div>
+      <div class="service-card">Photoshop Editing</div>
+      <div class="service-card">AI Automation</div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <h2 class="section-title">Contact Me</h2>
+
+    <div class="contact-card">
+      <h3>Let's Work Together</h3>
+      <p>Email: your-email@gmail.com</p>
+      <p>Phone: 09XX-XXX-XXXX</p>
+      <p>GitHub: github.com/jericalbar</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Jeric Albar. All Rights Reserved.</p>
+  </footer>
+
+  <button id="backToTop">↑</button>
+
+</body>
+</html>
