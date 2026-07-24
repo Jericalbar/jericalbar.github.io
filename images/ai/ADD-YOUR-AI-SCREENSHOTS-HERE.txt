@@ -1,0 +1,6 @@
+Required filenames:
+ai-workflow-overview.jpg
+ai-trigger.jpg
+ai-image-generation.jpg
+ai-caption.jpg
+ai-social-post.jpg

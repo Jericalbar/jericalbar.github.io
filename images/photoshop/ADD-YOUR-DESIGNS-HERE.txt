@@ -1,0 +1,7 @@
+Required filenames:
+design-01.jpg
+design-02.jpg
+design-03.jpg
+design-04.jpg
+design-05.jpg
+design-06.jpg

@@ -1,0 +1,16 @@
+ALL PROJECT CARDS ARE NOW CLICKABLE
+
+Ultimax:
+- Page: ultimax-project.html
+- Images: images/ultimax/
+
+AI Workflow:
+- Page: ai-project.html
+- Images: images/ai/
+
+Photoshop:
+- Page: photoshop-project.html
+- Images: images/photoshop/
+
+Keep project-gallery.js because all gallery pages use it.
+Comments marked REMARK explain what every added section does.

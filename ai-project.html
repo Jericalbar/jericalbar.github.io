@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- REMARK: TITLE SA BROWSER TAB -->
+  <title>AI Social Media Workflow | Jeric Albar</title>
+
+  <!-- REMARK: PAREHONG DESIGN FILE NG MAIN PORTFOLIO -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="project-page">
+  <!-- REMARK: PROJECT INTRODUCTION AT BACK BUTTON -->
+  <header class="project-detail-header">
+    <div class="container">
+      <a href="index.html#projects" class="back-link">← Back to Projects</a>
+      <p class="eyebrow">AI Automation</p>
+      <h1>AI Social Media Workflow</h1>
+      <p class="project-detail-description">An automated workflow developed using n8n and OpenAI to generate images, create captions, organize content, and prepare social media posts.</p>
+
+      <!-- REMARK: TECHNOLOGIES O SKILLS -->
+      <div class="project-tech project-detail-tech">
+        <span>n8n</span>
+        <span>OpenAI</span>
+        <span>AI Image Generation</span>
+        <span>Content Automation</span>
+      </div>
+
+      <!-- REMARK: PALITAN ANG # NG TOTOONG LINKS O ALISIN ANG BUTTON -->
+      <div class="project-detail-buttons">
+        <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Live Workflow</a>
+        <a href="#" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View GitHub</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- REMARK: MARAMING PROJECT IMAGES / SCREENSHOTS -->
+    <section class="project-gallery-section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Project Gallery</p>
+          <h2>Project Screenshots</h2>
+          <p class="gallery-instruction">Click any image to view it in full screen.</p>
+        </div>
+
+        <div class="project-gallery">
+          <!-- REMARK: IMAGE 1 - WORKFLOW OVERVIEW -->
+          <button class="gallery-item" type="button"
+            data-image="images/ai/ai-workflow-overview.jpg"
+            data-title="Workflow Overview">
+            <img src="images/ai/ai-workflow-overview.jpg" alt="Complete n8n workflow" />
+            <span>Workflow Overview</span>
+          </button>
+          <!-- REMARK: IMAGE 2 - TRIGGER NODE -->
+          <button class="gallery-item" type="button"
+            data-image="images/ai/ai-trigger.jpg"
+            data-title="Trigger Node">
+            <img src="images/ai/ai-trigger.jpg" alt="Automation trigger node" />
+            <span>Trigger Node</span>
+          </button>
+          <!-- REMARK: IMAGE 3 - AI IMAGE GENERATION -->
+          <button class="gallery-item" type="button"
+            data-image="images/ai/ai-image-generation.jpg"
+            data-title="AI Image Generation">
+            <img src="images/ai/ai-image-generation.jpg" alt="AI image generation step" />
+            <span>AI Image Generation</span>
+          </button>
+          <!-- REMARK: IMAGE 4 - CAPTION GENERATION -->
+          <button class="gallery-item" type="button"
+            data-image="images/ai/ai-caption.jpg"
+            data-title="Caption Generation">
+            <img src="images/ai/ai-caption.jpg" alt="AI caption generation step" />
+            <span>Caption Generation</span>
+          </button>
+          <!-- REMARK: IMAGE 5 - SOCIAL MEDIA POSTING -->
+          <button class="gallery-item" type="button"
+            data-image="images/ai/ai-social-post.jpg"
+            data-title="Social Media Posting">
+            <img src="images/ai/ai-social-post.jpg" alt="Social media posting step" />
+            <span>Social Media Posting</span>
+          </button>
+
+          <!-- REMARK:
+               Para magdagdag pa, kopyahin ang isang gallery-item,
+               ilagay ang image sa images/ai/, at palitan ang filename. -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- REMARK: FULL-SCREEN IMAGE VIEWER -->
+  <div class="image-lightbox" id="imageLightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close image">×</button>
+    <figure class="lightbox-content">
+      <img id="lightboxImage" src="" alt="Full-screen project preview" />
+      <figcaption id="lightboxTitle"></figcaption>
+    </figure>
+  </div>
+
+  <!-- REMARK: SHARED GALLERY JAVASCRIPT -->
+  <script src="project-gallery.js"></script>
+</body>
+</html>

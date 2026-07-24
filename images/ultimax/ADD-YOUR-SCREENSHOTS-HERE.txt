@@ -1,0 +1,6 @@
+Rename your screenshots exactly as:
+ultimax-home.jpg
+ultimax-about.jpg
+ultimax-products.jpg
+ultimax-projects.jpg
+ultimax-contact.jpg

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- REMARK: TITLE NA LALABAS SA BROWSER TAB -->
+  <title>Ultimax Building Solutions Project | Jeric Albar</title>
+  <!-- REMARK: MAIN CSS NG PORTFOLIO -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="project-page">
+  <!-- REMARK: PROJECT HEADER - Back button, title, description, at links -->
+  <header class="project-detail-header">
+    <div class="container">
+      <a href="index.html#projects" class="back-link">← Back to Projects</a>
+      <p class="eyebrow">Company Website</p>
+      <h1>Ultimax Building Solutions</h1>
+      <p class="project-detail-description">
+        A professional company website created to showcase Ultimax Building
+        Solutions' in-house manufacturing, aluminum and glass products,
+        services, company information, and completed projects.
+      </p>
+      <!-- REMARK: TECHNOLOGIES / PLATFORM NA GINAMIT -->
+      <div class="project-tech project-detail-tech">
+        <span>Wix</span><span>Responsive Design</span><span>Web Design</span><span>Company Website</span>
+      </div>
+      <!-- REMARK: Palitan ang # ng totoong website at GitHub URL -->
+      <div class="project-detail-buttons">
+        <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Visit Live Website</a>
+        <a href="#" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View GitHub</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <!-- REMARK: PROJECT GALLERY - Magdagdag ng gallery-item para sa bawat screenshot -->
+    <section class="project-gallery-section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Project Gallery</p>
+          <h2>Website Screenshots</h2>
+          <p class="gallery-instruction">Click any image to view it in full screen.</p>
+        </div>
+        <div class="project-gallery">
+          <!-- REMARK: SCREENSHOT 1 - HOMEPAGE -->
+          <button class="gallery-item" type="button" data-image="images/ultimax/ultimax-home.jpg" data-title="Ultimax Homepage">
+            <img src="images/ultimax/ultimax-home.jpg" alt="Ultimax homepage screenshot" /><span>Homepage</span>
+          </button>
+          <!-- REMARK: SCREENSHOT 2 - ABOUT PAGE -->
+          <button class="gallery-item" type="button" data-image="images/ultimax/ultimax-about.jpg" data-title="Ultimax About Page">
+            <img src="images/ultimax/ultimax-about.jpg" alt="Ultimax about page screenshot" /><span>About Page</span>
+          </button>
+          <!-- REMARK: SCREENSHOT 3 - PRODUCTS PAGE -->
+          <button class="gallery-item" type="button" data-image="images/ultimax/ultimax-products.jpg" data-title="Ultimax Products Page">
+            <img src="images/ultimax/ultimax-products.jpg" alt="Ultimax products page screenshot" /><span>Products Page</span>
+          </button>
+          <!-- REMARK: SCREENSHOT 4 - PROJECTS PAGE -->
+          <button class="gallery-item" type="button" data-image="images/ultimax/ultimax-projects.jpg" data-title="Ultimax Projects Page">
+            <img src="images/ultimax/ultimax-projects.jpg" alt="Ultimax projects page screenshot" /><span>Projects Page</span>
+          </button>
+          <!-- REMARK: SCREENSHOT 5 - CONTACT PAGE -->
+          <button class="gallery-item" type="button" data-image="images/ultimax/ultimax-contact.jpg" data-title="Ultimax Contact Page">
+            <img src="images/ultimax/ultimax-contact.jpg" alt="Ultimax contact page screenshot" /><span>Contact Page</span>
+          </button>
+          <!-- REMARK: Kopyahin ang isang gallery-item sa itaas para magdagdag pa ng screenshot -->
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- REMARK: LIGHTBOX / FULL-SCREEN IMAGE VIEWER -->
+  <div class="image-lightbox" id="imageLightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close full-screen image">×</button>
+    <figure class="lightbox-content">
+      <img id="lightboxImage" src="" alt="Full-screen project preview" />
+      <figcaption id="lightboxTitle"></figcaption>
+    </figure>
+  </div>
+  <!-- REMARK: JAVASCRIPT PARA SA PROJECT GALLERY -->
+  <script src="project-gallery.js"></script>
+</body>
+</html>
