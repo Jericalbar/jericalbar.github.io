@@ -800,3 +800,254 @@ textarea {
     padding: 24px;
   }
 }
+/* ============================= */
+/* PROJECT CARD ANIMATION */
+/* ============================= */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  background: rgba(15, 31, 52, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+
+  transform-style: preserve-3d;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+/* Card lift animation */
+.project-card:hover {
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
+  border-color: rgba(57, 167, 255, 0.55);
+}
+
+/* Animated glowing border */
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 24px;
+  padding: 2px;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    #39a7ff,
+    #6af0c4,
+    transparent
+  );
+
+  background-size: 300% 300%;
+  animation: projectBorder 5s linear infinite;
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: 3;
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+@keyframes projectBorder {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 300% 50%;
+  }
+}
+
+/* Mouse spotlight */
+.project-glow {
+  position: absolute;
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(57, 167, 255, 0.28),
+    transparent 70%
+  );
+
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.project-card:hover .project-glow {
+  opacity: 1;
+}
+
+/* Project image */
+.project-image {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  background: #0d1a2d;
+  z-index: 2;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition:
+    transform 0.6s ease,
+    filter 0.5s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.1);
+  filter: brightness(1.08);
+}
+
+/* Project content */
+.project-content {
+  position: relative;
+  padding: 26px;
+  z-index: 2;
+  transform: translateZ(30px);
+}
+
+.project-tag {
+  display: inline-block;
+  color: #6af0c4;
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 10px;
+}
+
+.project-content h3 {
+  color: #ffffff;
+  font-size: 1.35rem;
+  margin-bottom: 12px;
+}
+
+.project-content p {
+  color: #a9b7ca;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* Technology tags */
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0;
+}
+
+.project-tech span {
+  padding: 6px 11px;
+  border-radius: 20px;
+  background: rgba(57, 167, 255, 0.12);
+  border: 1px solid rgba(57, 167, 255, 0.25);
+  color: #72c2ff;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+/* Project link animation */
+.project-link {
+  display: inline-block;
+  color: #ffffff;
+  font-weight: 700;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.project-link:hover {
+  color: #6af0c4;
+  transform: translateX(7px);
+}
+
+/* ============================= */
+/* SCROLL REVEAL ANIMATION */
+/* ============================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(50px) scale(0.96);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Different animation delay per card */
+.project-card:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.project-card:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.project-card:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+/* Responsive layout */
+@media screen and (max-width: 950px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-image {
+    height: 210px;
+  }
+}
+
+/* Disable 3D movement for touch devices */
+@media (hover: none) {
+  .project-card {
+    transform: none !important;
+  }
+}
+
+/* Respect reduced motion settings */
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .project-image img,
+  .reveal,
+  .project-link {
+    animation: none;
+    transition: none;
+  }
+}
