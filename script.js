@@ -121,3 +121,72 @@ document.addEventListener("mousemove", (event) => {
 currentYear.textContent = new Date().getFullYear();
 
 typeRole();
+
+/* ============================= */
+/* PROJECT SCROLL REVEAL */
+/* ============================= */
+
+const revealElements = document.querySelectorAll(".reveal");
+
+const revealObserver = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.15
+  }
+);
+
+revealElements.forEach((element) => {
+  revealObserver.observe(element);
+});
+
+
+/* ============================= */
+/* PROJECT 3D TILT */
+/* ============================= */
+
+const projectCards = document.querySelectorAll(".project-card");
+
+projectCards.forEach((card) => {
+  const glow = card.querySelector(".project-glow");
+
+  card.addEventListener("mousemove", (event) => {
+    const cardRect = card.getBoundingClientRect();
+
+    const mouseX = event.clientX - cardRect.left;
+    const mouseY = event.clientY - cardRect.top;
+
+    const centerX = cardRect.width / 2;
+    const centerY = cardRect.height / 2;
+
+    const rotateX = ((mouseY - centerY) / centerY) * -5;
+    const rotateY = ((mouseX - centerX) / centerX) * 5;
+
+    card.style.transform = `
+      perspective(1000px)
+      rotateX(${rotateX}deg)
+      rotateY(${rotateY}deg)
+      translateY(-10px)
+    `;
+
+    if (glow) {
+      glow.style.left = `${mouseX}px`;
+      glow.style.top = `${mouseY}px`;
+    }
+  });
+
+  card.addEventListener("mouseleave", () => {
+    card.style.transform = `
+      perspective(1000px)
+      rotateX(0deg)
+      rotateY(0deg)
+      translateY(0)
+    `;
+  });
+});
