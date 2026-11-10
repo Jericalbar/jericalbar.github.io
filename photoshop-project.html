@@ -127,14 +127,11 @@
   </div>
 
   <script src="script.js"></script>
-
-  <!-- BUILT-IN LIGHTBOX SCRIPT (100% GAGANA) -->
   <script>
     function openLightbox(imgSrc, titleText) {
       const lightbox = document.getElementById("imageLightbox");
       const lightboxImage = document.getElementById("lightboxImage");
       const lightboxTitle = document.getElementById("lightboxTitle");
-
       if (!lightbox || !lightboxImage) return;
 
       lightboxImage.src = imgSrc;
@@ -148,7 +145,6 @@
     function closeLightbox() {
       const lightbox = document.getElementById("imageLightbox");
       const lightboxImage = document.getElementById("lightboxImage");
-
       if (!lightbox) return;
 
       lightbox.classList.remove("active");
@@ -156,7 +152,6 @@
       if (lightboxImage) lightboxImage.src = "";
     }
 
-    // ESC Key pang-close
     window.addEventListener("keydown", (e) => {
       if (e.key === "Escape") closeLightbox();
     });
