@@ -6,6 +6,13 @@
   <meta name="description" content="Jeric Albar - IT Support Specialist, Network Support, CCTV, Printer Troubleshooting, Photoshop, and AI Automation." />
   <title>Jeric Albar | IT Support Portfolio</title>
 
+  <!-- SMART ANTI-FLICKER: Hindi na magpapakita ang intro pag nag-back -->
+  <script>
+    if (sessionStorage.getItem("portfolioOpened") === "true" || window.location.hash) {
+      document.documentElement.classList.add("skip-intro");
+    }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
@@ -52,6 +59,14 @@
 
     body.intro-active {
       overflow: hidden !important;
+    }
+
+    /* KAPAG NAG-BACK: Rekta display at walang intro */
+    html.skip-intro .intro-overlay {
+      display: none !important;
+    }
+    html.skip-intro body.intro-active {
+      overflow: auto !important;
     }
 
     body.menu-open {
@@ -327,9 +342,7 @@
       }
     }
 
-    /* =========================================================
-       HEADER NAVIGATION
-       ========================================================= */
+    /* HEADER */
     .header {
       position: fixed;
       top: 0;
@@ -414,9 +427,7 @@
       transition: 0.25s ease;
     }
 
-    /* =========================================================
-       HERO SECTION
-       ========================================================= */
+    /* HERO */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -664,9 +675,7 @@
       100% { transform: scale(2.4); opacity: 0; }
     }
 
-    /* =========================================================
-       SECTIONS & CARDS
-       ========================================================= */
+    /* SECTIONS */
     .section-heading {
       max-width: 760px;
       margin-bottom: 50px;
@@ -1417,7 +1426,7 @@
       </div>
     </section>
 
-    <!-- 5. FEATURED WORK / PROJECTS SECTION -->
+    <!-- 5. FEATURED WORK SECTION -->
     <section class="section alt-section" id="projects">
       <div class="container">
         <div class="section-heading">
@@ -1450,7 +1459,7 @@
             </article>
           </a>
 
-          <!-- 2. AI AUTOMATION PROJECT CARD (INAYOS NA ANG IMAGE PATH) -->
+          <!-- 2. AI AUTOMATION PROJECT CARD -->
           <a href="ai-project.html" class="project-card-link" aria-label="View AI Social Media Workflow project gallery">
             <article class="project-card">
               <div class="project-image">
@@ -1607,14 +1616,23 @@
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-      // 2. INTRO SHUTTER & SHOCKWAVE
+      // 2. INTRO CONTROLLER & SESSION PERSISTENCE
       const openBtn = document.getElementById("openPortfolioBtn");
       const introOverlay = document.getElementById("introOverlay");
       const introBox = document.getElementById("introBox");
       const shockwave = document.getElementById("shockwave");
 
+      // Check kung nabuksan na dati o galing sa back navigation
+      if (sessionStorage.getItem("portfolioOpened") === "true" || window.location.hash) {
+        if (introOverlay) introOverlay.style.display = "none";
+        document.body.classList.remove("intro-active");
+      }
+
       if (openBtn && introOverlay) {
         openBtn.addEventListener("click", (e) => {
+          // I-save sa session na nabuksan na (hindi na uulit sa back)
+          sessionStorage.setItem("portfolioOpened", "true");
+
           if (shockwave) {
             shockwave.style.left = `${e.clientX}px`;
             shockwave.style.top = `${e.clientY}px`;
