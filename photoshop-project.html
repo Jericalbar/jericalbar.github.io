@@ -3,111 +3,149 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- REMARK: TITLE SA BROWSER TAB -->
   <title>Photoshop Design Collection | Jeric Albar</title>
-
-  <!-- REMARK: PAREHONG DESIGN FILE NG MAIN PORTFOLIO -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body class="project-page">
-  <!-- REMARK: PROJECT INTRODUCTION AT BACK BUTTON -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+  <div class="custom-cursor-dot" id="cursorDot"></div>
+  <div class="custom-cursor-ring" id="cursorRing"></div>
+
   <header class="project-detail-header">
     <div class="container">
       <a href="index.html#projects" class="back-link">← Back to Projects</a>
-      <p class="eyebrow">Graphic Design</p>
+      <p class="eyebrow">Graphic Design Showcase</p>
       <h1>Photoshop Design Collection</h1>
-      <p class="project-detail-description">A collection of social media graphics, promotional materials, product designs, branding assets, and professional photo-editing work.</p>
+      <p class="project-detail-description">
+        A curated showcase of social media promo materials, menu banners, launch posters, and branding collaterals designed for <strong>Cravings To Go</strong> using Adobe Photoshop.
+      </p>
 
-      <!-- REMARK: TECHNOLOGIES O SKILLS -->
       <div class="project-tech project-detail-tech">
         <span>Adobe Photoshop</span>
-        <span>Photo Editing</span>
-        <span>Social Media Design</span>
+        <span>Photo Manipulation</span>
+        <span>Menu Design</span>
+        <span>Social Media Ads</span>
         <span>Branding</span>
       </div>
 
-      <!-- REMARK: PALITAN ANG # NG TOTOONG LINKS O ALISIN ANG BUTTON -->
       <div class="project-detail-buttons">
-        <a href="https://www.facebook.com/profile.php?id=61566839101036&sk=photos" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Design Page</a>
-        
+        <a href="https://www.facebook.com/profile.php?id=61566839101036&sk=photos" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Live Page</a>
+        <a href="index.html#contact" class="btn btn-secondary">Inquire / Hire</a>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- REMARK: MARAMING PROJECT IMAGES / SCREENSHOTSs -->
     <section class="project-gallery-section">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow">Project Gallery</p>
-          <h2>Project Screenshots</h2>
-          <p class="gallery-instruction">Click any image to view it in full screen.</p>
+          <p class="eyebrow">Design Portfolio</p>
+          <h2>Featured Visual Works</h2>
+          <p class="gallery-instruction">💡 Click any card to expand full screen preview.</p>
         </div>
 
         <div class="project-gallery">
-          <!-- REMARK: IMAGE 1 - SOCIAL MEDIA DESIGN 1 -->
+          <!-- 1. Full Menu -->
           <button class="gallery-item" type="button"
-            data-image="images/photoshop/design-01.jpg"
-            data-title="Social Media Design 1">
-            <img src="images/photoshop/design-01.jpg" alt="Social media graphic one" />
-            <span>Social Media Design 1</span>
-          </button>
-          <!-- REMARK: IMAGE 2 - SOCIAL MEDIA DESIGN 2 -->
-          <button class="gallery-item" type="button"
-            data-image="images/photoshop/design-02.jpg"
-            data-title="Social Media Design 2">
-            <img src="images/photoshop/design-02.jpg" alt="Social media graphic two" />
-            <span>Social Media Design 2</span>
-          </button>
-          <!-- REMARK: IMAGE 3 - PRODUCT PROMOTION -->
-          <button class="gallery-item" type="button"
-            data-image="images/photoshop/design-21.jpg"
-            data-title="Product Promotion">
-            <img src="images/photoshop/design-21.jpg" alt="Product promotional design" />
-            <span>Product Promotion</span>
-          </button>
-          <!-- REMARK: IMAGE 4 - PHOTO EDITING -->
-          <button class="gallery-item" type="button"
-            data-image="images/photoshop/design-04.jpg"
-            data-title="Photo Editing">
-            <img src="images/photoshop/design-04.jpg" alt="Photo editing sample" />
-            <span>Photo Editing</span>
-          </button>
-          <!-- REMARK: IMAGE 5 - BRANDING DESIGN -->
-          <button class="gallery-item" type="button"
-            data-image="images/photoshop/design-05.jpg"
-            data-title="Branding Design">
-            <img src="images/photoshop/design-05.jpg" alt="Branding design sample" />
-            <span>Branding Design</span>
-          </button>
-          <!-- REMARK: IMAGE 6 - ADDITIONAL DESIGN -->
-          <button class="gallery-item" type="button"
-            data-image="images/photoshop/design-06.jpg"
-            data-title="Additional Design">
-            <img src="images/photoshop/design-06.jpg" alt="Additional design sample" />
-            <span>Additional Design</span>
+            data-image="images/photoshop/design-03.jpg"
+            data-title="Full Menu & Pricing Board">
+            <div class="gallery-img-wrap">
+              <span class="gallery-badge">Featured Poster</span>
+              <img src="images/photoshop/design-03.jpg" alt="Cravings To Go Full Menu Design" />
+            </div>
+            <div class="gallery-info">
+              <h4>Full Menu & Price Board</h4>
+              <span class="gallery-view-hint">🔍 Expand</span>
+            </div>
           </button>
 
-          <!-- REMARK:
-               Para magdagdag pa, kopyahin ang isang gallery-item,
-               ilagay ang image sa images/photoshop/, at palitan ang filename. -->
+          <!-- 2. Churros Supremacy -->
+          <button class="gallery-item" type="button"
+            data-image="images/photoshop/design-04.jpg"
+            data-title="Churros Supremacy Promo">
+            <div class="gallery-img-wrap">
+              <span class="gallery-badge">Promo Ad</span>
+              <img src="images/photoshop/design-04.jpg" alt="Churros Supremacy Design" />
+            </div>
+            <div class="gallery-info">
+              <h4>Churros Supremacy Promo</h4>
+              <span class="gallery-view-hint">🔍 Expand</span>
+            </div>
+          </button>
+
+          <!-- 3. Fries Float Solo -->
+          <button class="gallery-item" type="button"
+            data-image="images/photoshop/design-01.jpg"
+            data-title="French Fries Float Solo (Barbeque)">
+            <div class="gallery-img-wrap">
+              <span class="gallery-badge">Product Launch</span>
+              <img src="images/photoshop/design-01.jpg" alt="French Fries Float Solo Cup" />
+            </div>
+            <div class="gallery-info">
+              <h4>Fries Float (Solo)</h4>
+              <span class="gallery-view-hint">🔍 Expand</span>
+            </div>
+          </button>
+
+          <!-- 4. Fries Float Trio -->
+          <button class="gallery-item" type="button"
+            data-image="images/photoshop/design-02.jpg"
+            data-title="French Fries Float Trio Flavors">
+            <div class="gallery-img-wrap">
+              <span class="gallery-badge">Product Trio</span>
+              <img src="images/photoshop/design-02.jpg" alt="French Fries Float Trio" />
+            </div>
+            <div class="gallery-info">
+              <h4>Fries Float (3 Flavors)</h4>
+              <span class="gallery-view-hint">🔍 Expand</span>
+            </div>
+          </button>
+
+          <!-- 5. Churros Nuggets -->
+          <button class="gallery-item" type="button"
+            data-image="images/photoshop/design-05.jpg"
+            data-title="Churros Nuggets Launch Announcement">
+            <div class="gallery-img-wrap">
+              <span class="gallery-badge">Social Media Ad</span>
+              <img src="images/photoshop/design-05.jpg" alt="Churros Nuggets Now Available" />
+            </div>
+            <div class="gallery-info">
+              <h4>Churros Nuggets Launch</h4>
+              <span class="gallery-view-hint">🔍 Expand</span>
+            </div>
+          </button>
+
+          <!-- 6. Hot Drinks -->
+          <button class="gallery-item" type="button"
+            data-image="images/photoshop/design-06.jpg"
+            data-title="Hot Drinks Series (Foodpanda Campaign)">
+            <div class="gallery-img-wrap">
+              <span class="gallery-badge">Delivery Ad</span>
+              <img src="images/photoshop/design-06.jpg" alt="Hot Drinks Series Poster" />
+            </div>
+            <div class="gallery-info">
+              <h4>Hot Drinks Foodpanda Ad</h4>
+              <span class="gallery-view-hint">🔍 Expand</span>
+            </div>
+          </button>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- REMARK: FULL-SCREEN IMAGE VIEWER -->
   <div class="image-lightbox" id="imageLightbox" aria-hidden="true">
     <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close image">×</button>
     <figure class="lightbox-content">
-      <img id="lightboxImage" src="" alt="Full-screen project preview" />
+      <img id="lightboxImage" src="" alt="Full preview" />
       <figcaption id="lightboxTitle"></figcaption>
     </figure>
   </div>
 
-  <!-- REMARK: SHARED GALLERY JAVASCRIPT -->
+  <script src="script.js"></script>
   <script src="project-gallery.js"></script>
 </body>
 </html>
