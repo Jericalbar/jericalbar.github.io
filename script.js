@@ -1,15 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // ==========================================
   // 1. DYNAMIC YEAR
-  // ==========================================
   const currentYearSpan = document.getElementById("currentYear");
   if (currentYearSpan) {
     currentYearSpan.textContent = new Date().getFullYear();
   }
 
-  // ==========================================
   // 2. MOBILE MENU TOGGLE
-  // ==========================================
   const menuToggle = document.getElementById("menuToggle");
   const navLinks = document.getElementById("navLinks");
   const navItems = document.querySelectorAll(".nav-link");
@@ -30,9 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ==========================================
   // 3. HEADER BACKGROUND ON SCROLL
-  // ==========================================
   const header = document.querySelector(".header");
   window.addEventListener("scroll", () => {
     if (window.scrollY > 40) {
@@ -42,9 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // ==========================================
   // 4. TYPING TEXT EFFECT
-  // ==========================================
   const typedText = document.getElementById("typedText");
   const words = [
     "IT Support Specialist",
@@ -83,9 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   typeEffect();
 
-  // ==========================================
   // 5. CURSOR GLOW EFFECT (DESKTOP)
-  // ==========================================
   const cursorGlow = document.getElementById("cursorGlow");
   if (cursorGlow && window.innerWidth > 768) {
     window.addEventListener("mousemove", (e) => {
@@ -94,16 +84,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ==========================================
   // 6. CLICKABLE EXPERIENCE ACCORDION
-  // ==========================================
   const timelineItems = document.querySelectorAll(".timeline-item");
   timelineItems.forEach((item) => {
     const clickableArea = item.querySelector(".clickable-experience");
     if (!clickableArea) return;
 
     const toggleAccordion = (e) => {
-      // Don't toggle if user clicked an explicit link inside the card
       if (e.target.closest("a")) return;
       const isExpanded = item.classList.toggle("active");
       item.setAttribute("aria-expanded", isExpanded ? "true" : "false");
@@ -119,9 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // ==========================================
   // 7. CONTACT FORM SUBMISSION
-  // ==========================================
   const contactForm = document.getElementById("contactForm");
   if (contactForm) {
     contactForm.addEventListener("submit", (e) => {
@@ -149,7 +134,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const chatPills = document.querySelectorAll(".chat-pill");
 
   if (chatFloatBtn && chatPopup) {
-    // Open / Close Toggle
     chatFloatBtn.addEventListener("click", () => {
       const isOpen = chatPopup.classList.toggle("active");
       chatPopup.setAttribute("aria-hidden", isOpen ? "false" : "true");
@@ -163,7 +147,6 @@ document.addEventListener("DOMContentLoaded", () => {
       chatPopup.setAttribute("aria-hidden", "true");
     });
 
-    // Helper: Append Message Bubble
     const appendMsg = (text, sender = "bot") => {
       if (!chatConversation) return;
       const row = document.createElement("div");
@@ -185,11 +168,9 @@ document.addEventListener("DOMContentLoaded", () => {
       chatConversation.scrollTop = chatConversation.scrollHeight;
     };
 
-    // Chatbot Knowledge Engine (Answers based on Jeric's resume & resources)
     const answerQuestion = (query) => {
       const q = query.toLowerCase();
 
-      // Experience & Work
       if (q.includes("experience") || q.includes("background") || q.includes("work") || q.includes("company")) {
         return "Jeric has over <strong>6 years of IT experience</strong> across four companies:<br><br>" +
                "• <strong>Supima Holding Inc</strong> (May 2023 - Present) — IT Staff (CCTV/NVR, LAN/Fiber optic cabling, NAS backups, user support).<br>" +
@@ -199,7 +180,6 @@ document.addEventListener("DOMContentLoaded", () => {
                "👉 Check the <a href='#experience' style='color:#6af0c4;text-decoration:underline;'>Experience Section</a> for full details!";
       }
 
-      // Skills, AI Tools, and Resources
       if (q.includes("skill") || q.includes("tech") || q.includes("ai") || q.includes("resource") || q.includes("claude") || q.includes("google") || q.includes("hardware") || q.includes("network") || q.includes("cctv")) {
         return "Jeric's technical skills & AI resources include:<br>" +
                "• <strong>AI & Automation</strong>: Google AI Studio, Claude, OpenAI (ChatGPT), n8n workflows.<br>" +
@@ -209,7 +189,6 @@ document.addEventListener("DOMContentLoaded", () => {
                "• <strong>Creative</strong>: Adobe Photoshop, Web Design.";
       }
 
-      // Projects
       if (q.includes("project") || q.includes("portfolio")) {
         return "Jeric's featured projects are:<br>" +
                "1. <a href='ultimax-project.html' style='color:#6af0c4;text-decoration:underline;'>Ultimax Building Solutions Website</a><br>" +
@@ -217,7 +196,6 @@ document.addEventListener("DOMContentLoaded", () => {
                "3. <a href='photoshop-project.html' style='color:#6af0c4;text-decoration:underline;'>Photoshop Design Collection</a>";
       }
 
-      // Contact & Hire
       if (q.includes("contact") || q.includes("email") || q.includes("phone") || q.includes("reach") || q.includes("hire") || q.includes("location") || q.includes("address")) {
         return "You can reach Jeric directly:<br>" +
                "📧 <strong>Email</strong>: <a href='mailto:jericalbar@gmail.com' style='color:#6af0c4;'>jericalbar@gmail.com</a><br>" +
@@ -226,26 +204,21 @@ document.addEventListener("DOMContentLoaded", () => {
                "Or send a message using the <a href='#contact' style='color:#6af0c4;text-decoration:underline;'>Contact Form</a>!";
       }
 
-      // Resume / CV
       if (q.includes("resume") || q.includes("cv") || q.includes("download")) {
         return "📄 You can download Jeric's resume here:<br><br><a href='images/CV/CV.pdf' class='timeline-badge-link' download style='color:#04111e;background:#6af0c4;padding:6px 14px;border-radius:20px;font-weight:700;'>Download Resume (PDF)</a>";
       }
 
-      // Education
       if (q.includes("education") || q.includes("graduate") || q.includes("college") || q.includes("degree") || q.includes("sti")) {
         return "🎓 Jeric graduated with a <strong>Bachelor of Science in Information Technology (BSIT)</strong> from <strong>STI Recto</strong> in 2018.";
       }
 
-      // Greetings
       if (q.includes("hello") || q.includes("hi") || q.includes("kamusta") || q.includes("hey")) {
         return "Hello! How can I assist you with Jeric's portfolio today? Feel free to ask about his work history, IT skills, Google AI Studio, Claude, or how to contact him!";
       }
 
-      // Default Response
       return "Jeric is an <strong>IT Support Specialist</strong> experienced in hardware, networking, CCTV, and AI automation (Google AI Studio, Claude, n8n). Feel free to contact him at <a href='mailto:jericalbar@gmail.com' style='color:#6af0c4;'>jericalbar@gmail.com</a>!";
     };
 
-    // Form Submit Listener
     if (chatInputBar) {
       chatInputBar.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -262,7 +235,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    // Quick Pill Buttons Listener
     chatPills.forEach((pill) => {
       pill.addEventListener("click", () => {
         const ask = pill.getAttribute("data-ask") || "";
