@@ -21,13 +21,12 @@
       <p class="eyebrow">Graphic Design Showcase</p>
       <h1>Photoshop Design Collection</h1>
       <p class="project-detail-description">
-        A curated showcase of social media promo materials, menu banners, launch posters, and branding collaterals designed for <strong>Cravings To Go</strong> using Adobe Photoshop.
+        A curated showcase of social media promo materials, launch posters, and branding collaterals designed for <strong>Cravings To Go</strong> using Adobe Photoshop.
       </p>
 
       <div class="project-tech project-detail-tech">
         <span>Adobe Photoshop</span>
         <span>Photo Manipulation</span>
-        <span>Menu Design</span>
         <span>Social Media Ads</span>
         <span>Branding</span>
       </div>
@@ -49,26 +48,11 @@
         </div>
 
         <div class="project-gallery">
-          <!-- 1. Full Menu -->
+          <!-- 1. Churros Supremacy -->
           <button class="gallery-item" type="button"
-            data-image="images/photoshop/design-03.jpg"
-            data-title="Full Menu & Pricing Board">
+            onclick="openLightbox('images/photoshop/design-04.jpg', 'Churros Supremacy Promo')">
             <div class="gallery-img-wrap">
-              <span class="gallery-badge">Featured Poster</span>
-              <img src="images/photoshop/design-03.jpg" alt="Cravings To Go Full Menu Design" />
-            </div>
-            <div class="gallery-info">
-              <h4>Full Menu & Price Board</h4>
-              <span class="gallery-view-hint">🔍 Expand</span>
-            </div>
-          </button>
-
-          <!-- 2. Churros Supremacy -->
-          <button class="gallery-item" type="button"
-            data-image="images/photoshop/design-04.jpg"
-            data-title="Churros Supremacy Promo">
-            <div class="gallery-img-wrap">
-              <span class="gallery-badge">Promo Ad</span>
+              <span class="gallery-badge">Featured Promo</span>
               <img src="images/photoshop/design-04.jpg" alt="Churros Supremacy Design" />
             </div>
             <div class="gallery-info">
@@ -77,10 +61,9 @@
             </div>
           </button>
 
-          <!-- 3. Fries Float Solo -->
+          <!-- 2. Fries Float Solo -->
           <button class="gallery-item" type="button"
-            data-image="images/photoshop/design-01.jpg"
-            data-title="French Fries Float Solo (Barbeque)">
+            onclick="openLightbox('images/photoshop/design-01.jpg', 'French Fries Float Solo (Barbeque)')">
             <div class="gallery-img-wrap">
               <span class="gallery-badge">Product Launch</span>
               <img src="images/photoshop/design-01.jpg" alt="French Fries Float Solo Cup" />
@@ -91,10 +74,9 @@
             </div>
           </button>
 
-          <!-- 4. Fries Float Trio -->
+          <!-- 3. Fries Float Trio -->
           <button class="gallery-item" type="button"
-            data-image="images/photoshop/design-02.jpg"
-            data-title="French Fries Float Trio Flavors">
+            onclick="openLightbox('images/photoshop/design-02.jpg', 'French Fries Float Trio Flavors')">
             <div class="gallery-img-wrap">
               <span class="gallery-badge">Product Trio</span>
               <img src="images/photoshop/design-02.jpg" alt="French Fries Float Trio" />
@@ -105,10 +87,9 @@
             </div>
           </button>
 
-          <!-- 5. Churros Nuggets -->
+          <!-- 4. Churros Nuggets -->
           <button class="gallery-item" type="button"
-            data-image="images/photoshop/design-05.jpg"
-            data-title="Churros Nuggets Launch Announcement">
+            onclick="openLightbox('images/photoshop/design-05.jpg', 'Churros Nuggets Launch Announcement')">
             <div class="gallery-img-wrap">
               <span class="gallery-badge">Social Media Ad</span>
               <img src="images/photoshop/design-05.jpg" alt="Churros Nuggets Now Available" />
@@ -119,10 +100,9 @@
             </div>
           </button>
 
-          <!-- 6. Hot Drinks -->
+          <!-- 5. Hot Drinks -->
           <button class="gallery-item" type="button"
-            data-image="images/photoshop/design-06.jpg"
-            data-title="Hot Drinks Series (Foodpanda Campaign)">
+            onclick="openLightbox('images/photoshop/design-06.jpg', 'Hot Drinks Series (Foodpanda Campaign)')">
             <div class="gallery-img-wrap">
               <span class="gallery-badge">Delivery Ad</span>
               <img src="images/photoshop/design-06.jpg" alt="Hot Drinks Series Poster" />
@@ -137,8 +117,9 @@
     </section>
   </main>
 
-  <div class="image-lightbox" id="imageLightbox" aria-hidden="true">
-    <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close image">×</button>
+  <!-- LIGHTBOX MODAL -->
+  <div class="image-lightbox" id="imageLightbox" onclick="if(event.target === this) closeLightbox()">
+    <button class="lightbox-close" id="lightboxClose" type="button" onclick="closeLightbox()" aria-label="Close image">×</button>
     <figure class="lightbox-content">
       <img id="lightboxImage" src="" alt="Full preview" />
       <figcaption id="lightboxTitle"></figcaption>
@@ -146,6 +127,39 @@
   </div>
 
   <script src="script.js"></script>
-  <script src="project-gallery.js"></script>
+
+  <!-- BUILT-IN LIGHTBOX SCRIPT (100% GAGANA) -->
+  <script>
+    function openLightbox(imgSrc, titleText) {
+      const lightbox = document.getElementById("imageLightbox");
+      const lightboxImage = document.getElementById("lightboxImage");
+      const lightboxTitle = document.getElementById("lightboxTitle");
+
+      if (!lightbox || !lightboxImage) return;
+
+      lightboxImage.src = imgSrc;
+      lightboxImage.alt = titleText || "";
+      if (lightboxTitle) lightboxTitle.textContent = titleText || "";
+
+      lightbox.classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById("imageLightbox");
+      const lightboxImage = document.getElementById("lightboxImage");
+
+      if (!lightbox) return;
+
+      lightbox.classList.remove("active");
+      document.body.style.overflow = "";
+      if (lightboxImage) lightboxImage.src = "";
+    }
+
+    // ESC Key pang-close
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeLightbox();
+    });
+  </script>
 </body>
 </html>
