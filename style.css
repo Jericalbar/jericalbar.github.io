@@ -782,48 +782,63 @@ textarea {
 }
 
 /* =========================================================
-   CUSTOM NEON CURSOR (Dot + Glow Ring)
+   FAIL-SAFE CUSTOM NEON CURSOR (Ligtas at hindi magiging invisible)
    ========================================================= */
-@media (min-width: 768px) {
-  * {
-    cursor: none !important;
-  }
+
+/* Hihid lang ang default pointer KAPAG active na ang custom script */
+body.custom-cursor-active,
+body.custom-cursor-active a,
+body.custom-cursor-active button,
+body.custom-cursor-active input,
+body.custom-cursor-active textarea {
+  cursor: none !important;
 }
 
 .custom-cursor-dot {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: -100px;
+  left: -100px;
   width: 8px;
   height: 8px;
   background: var(--accent);
   border-radius: 50%;
   pointer-events: none;
-  z-index: 999999;
+  z-index: 9999999;
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 10px var(--accent), 0 0 20px var(--primary);
+  box-shadow: 0 0 10px var(--accent), 0 0 18px var(--primary);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .custom-cursor-ring {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: -100px;
+  left: -100px;
   width: 36px;
   height: 36px;
-  border: 2px solid rgba(57, 167, 255, 0.75);
+  border: 2px solid rgba(57, 167, 255, 0.8);
   border-radius: 50%;
   pointer-events: none;
-  z-index: 999998;
+  z-index: 9999998;
   transform: translate(-50%, -50%);
+  opacity: 0;
   transition: width 0.2s cubic-bezier(0.2, 0, 0, 1),
               height 0.2s cubic-bezier(0.2, 0, 0, 1),
               border-color 0.2s ease,
-              background 0.2s ease;
+              background 0.2s ease,
+              opacity 0.3s ease;
 }
 
+/* Lalabas lang kapag activated na */
+body.custom-cursor-active .custom-cursor-dot,
+body.custom-cursor-active .custom-cursor-ring {
+  opacity: 1;
+}
+
+/* Hover state kapag nasa clickable links at buttons */
 .custom-cursor-ring.cursor-hover {
-  width: 58px;
-  height: 58px;
+  width: 56px;
+  height: 56px;
   border-color: var(--accent);
   background: rgba(106, 240, 196, 0.12);
   backdrop-filter: blur(2px);
