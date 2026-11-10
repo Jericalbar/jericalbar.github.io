@@ -4,32 +4,37 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Social Media Workflow | Jeric Albar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body class="project-page">
+  <div class="cursor-glow" id="cursorGlow"></div>
+  <div class="custom-cursor-dot" id="cursorDot"></div>
+  <div class="custom-cursor-ring" id="cursorRing"></div>
+
   <header class="project-detail-header">
     <div class="container">
       <a href="index.html#projects" class="back-link">← Back to Projects</a>
-      <p class="eyebrow">AI Automation</p>
+      <p class="eyebrow">Intelligent Automation</p>
       <h1>AI Social Media Workflow</h1>
       <p class="project-detail-description">
-        An automated workflow developed using n8n, OpenAI, Google AI Studio, and Claude to generate images, create captions, organize content, and prepare social media posts.
+        An end-to-end automated pipeline created with <strong>n8n, Google AI Studio, Claude, and OpenAI</strong> to orchestrate prompt generation, synthesize AI graphics, generate contextual captions, and publish directly to social channels.
       </p>
 
-      <!-- TECHNOLOGIES & RESOURCES -->
       <div class="project-tech project-detail-tech">
-        <span>n8n</span>
-        <span>OpenAI</span>
+        <span>n8n Workflows</span>
         <span>Google AI Studio</span>
-        <span>Claude</span>
-        <span>AI Image Generation</span>
-        <span>Content Automation</span>
+        <span>Claude 3.5</span>
+        <span>OpenAI API</span>
+        <span>Task Automation</span>
       </div>
 
       <div class="project-detail-buttons">
-        <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Live Workflow</a>
-        <a href="https://github.com/jericalbar" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View GitHub</a>
+        <a href="https://github.com/jericalbar" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View GitHub</a>
+        <a href="index.html#contact" class="btn btn-secondary">Inquire Workflow</a>
       </div>
     </div>
   </header>
@@ -38,45 +43,80 @@
     <section class="project-gallery-section">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow">Project Gallery</p>
-          <h2>Project Screenshots</h2>
-          <p class="gallery-instruction">Click any image to view it in full screen.</p>
+          <p class="eyebrow">Pipeline Architecture</p>
+          <h2>Workflow Breakdown</h2>
+          <p class="gallery-instruction">💡 Click any step to inspect the workflow in full size.</p>
         </div>
 
         <div class="project-gallery">
+          <!-- 1. Full Workflow -->
           <button class="gallery-item" type="button"
             data-image="images/ai/ai-workflow-overview.jpg"
-            data-title="Workflow Overview">
-            <img src="images/ai/ai-workflow-overview.jpg" alt="Complete n8n workflow" />
-            <span>Workflow Overview</span>
+            data-title="Complete n8n Workflow Overview">
+            <div class="gallery-img-wrap">
+              <span class="gallery-badge">Architecture</span>
+              <img src="images/ai/ai-workflow-overview.jpg" alt="Complete n8n workflow graph" />
+            </div>
+            <div class="gallery-info">
+              <h4>Full Workflow Graph</h4>
+              <span class="gallery-view-hint">🔍 Expand</span>
+            </div>
           </button>
-          
+
+          <!-- 2. Trigger -->
           <button class="gallery-item" type="button"
             data-image="images/ai/ai-trigger.jpg"
-            data-title="Trigger Node">
-            <img src="images/ai/ai-trigger.jpg" alt="Automation trigger node" />
-            <span>Trigger Node</span>
+            data-title="Webhook / Schedule Trigger Node">
+            <div class="gallery-img-wrap">
+              <span class="gallery-badge">Node Config</span>
+              <img src="images/ai/ai-trigger.jpg" alt="Automation trigger node" />
+            </div>
+            <div class="gallery-info">
+              <h4>Trigger & Data Input</h4>
+              <span class="gallery-view-hint">🔍 Expand</span>
+            </div>
           </button>
-          
+
+          <!-- 3. Image Gen -->
           <button class="gallery-item" type="button"
             data-image="images/ai/ai-image-generation.jpg"
-            data-title="AI Image Generation">
-            <img src="images/ai/ai-image-generation.jpg" alt="AI image generation step" />
-            <span>AI Image Generation</span>
+            data-title="AI Image Generation Node">
+            <div class="gallery-img-wrap">
+              <span class="gallery-badge">AI Pipeline</span>
+              <img src="images/ai/ai-image-generation.jpg" alt="AI image generation step" />
+            </div>
+            <div class="gallery-info">
+              <h4>AI Image Synthesizer</h4>
+              <span class="gallery-view-hint">🔍 Expand</span>
+            </div>
           </button>
-          
+
+          <!-- 4. Caption Gen -->
           <button class="gallery-item" type="button"
             data-image="images/ai/ai-caption.jpg"
-            data-title="Caption Generation">
-            <img src="images/ai/ai-caption.jpg" alt="AI caption generation step" />
-            <span>Caption Generation</span>
+            data-title="LLM Caption & Copy Generation">
+            <div class="gallery-img-wrap">
+              <span class="gallery-badge">NLP Node</span>
+              <img src="images/ai/ai-caption.jpg" alt="AI caption generation step" />
+            </div>
+            <div class="gallery-info">
+              <h4>Contextual Caption Writer</h4>
+              <span class="gallery-view-hint">🔍 Expand</span>
+            </div>
           </button>
-          
+
+          <!-- 5. Social Post -->
           <button class="gallery-item" type="button"
             data-image="images/ai/ai-social-post.jpg"
-            data-title="Social Media Posting">
-            <img src="images/ai/ai-social-post.jpg" alt="Social media posting step" />
-            <span>Social Media Posting</span>
+            data-title="Multi-Platform Social Auto-Publish">
+            <div class="gallery-img-wrap">
+              <span class="gallery-badge">Output</span>
+              <img src="images/ai/ai-social-post.jpg" alt="Social media posting node" />
+            </div>
+            <div class="gallery-info">
+              <h4>Social Dispatch Node</h4>
+              <span class="gallery-view-hint">🔍 Expand</span>
+            </div>
           </button>
         </div>
       </div>
@@ -86,11 +126,12 @@
   <div class="image-lightbox" id="imageLightbox" aria-hidden="true">
     <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close image">×</button>
     <figure class="lightbox-content">
-      <img id="lightboxImage" src="" alt="Full-screen project preview" />
+      <img id="lightboxImage" src="" alt="Full preview" />
       <figcaption id="lightboxTitle"></figcaption>
     </figure>
   </div>
 
+  <script src="script.js"></script>
   <script src="project-gallery.js"></script>
 </body>
 </html>
