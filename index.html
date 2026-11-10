@@ -38,7 +38,7 @@
   </header>
 
   <main>
-    <!-- REMARK: HERO/HOME SECTION - Introduction, buttons, at profile photo -->
+    <!-- HERO/HOME SECTION -->
     <section class="hero section" id="home">
       <div class="container hero-grid">
         <div class="hero-content reveal">
@@ -53,14 +53,14 @@
           </p>
 
           <div class="hero-actions">
-  <a href="#projects" class="btn btn-primary">
-    View My Projects
-  </a>
+            <a href="#projects" class="btn btn-primary">
+              View My Projects
+            </a>
+            <a href="images/CV/CV.pdf" class="btn btn-secondary" download>
+              📄 Download Resume
+            </a>
+          </div>
 
-  <a href="images/CV/CV.pdf" class="btn btn-secondary" download>
-    📄 Download Resume
-  </a>
-</div>
           <div class="quick-stats">
             <div>
               <strong>6+</strong>
@@ -91,7 +91,7 @@
       </div>
     </section>
 
-    <!-- REMARK: ABOUT SECTION - Professional background -->
+    <!-- ABOUT SECTION -->
     <section class="section" id="about">
       <div class="container">
         <div class="section-heading reveal">
@@ -102,7 +102,7 @@
         <div class="about-grid">
           <div class="about-card reveal">
             <p>
-              I am an IT Support Specialist with more than five years of experience
+              I am an IT Support Specialist with more than six years of experience
               in troubleshooting hardware, software, network, printer, CCTV, and
               remote technical issues.
             </p>
@@ -143,49 +143,125 @@
       </div>
     </section>
 
-    <!-- REMARK: EXPERIENCE SECTION - Work history at responsibilities -->
+    <!-- CLICKABLE EXPERIENCE SECTION (Directly from Resume) -->
     <section class="section alt-section" id="experience">
       <div class="container">
         <div class="section-heading reveal">
           <p class="eyebrow">Experience</p>
           <h2>Professional Background</h2>
+          <p class="experience-subtext">Click any role to expand, collapse details, and view related work.</p>
         </div>
 
         <div class="timeline">
-          <article class="timeline-item reveal">
+          <!-- 1. SUPIMA HOLDING INC -->
+          <article class="timeline-item reveal active" tabindex="0" role="button" aria-expanded="true">
             <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <span class="timeline-date">Present</span>
-              <h3>IT Support Specialist</h3>
-              <h4>Supima Holdings Inc.</h4>
-              <ul>
-                <li>Provide technical support for hardware, software, network, printer, and CCTV issues.</li>
-                <li>Resolve user concerns through on-site and remote troubleshooting.</li>
-                <li>Handle device setup, maintenance, system updates, and ticketing tasks.</li>
-                <li>Support internet connectivity, router configuration, and office network stability.</li>
-              </ul>
+            <div class="timeline-content clickable-experience">
+              <div class="timeline-header">
+                <div>
+                  <span class="timeline-date">May 2023 – Present</span>
+                  <h3>IT Staff</h3>
+                  <h4>Supima Holding Inc</h4>
+                </div>
+                <span class="toggle-icon" aria-hidden="true">▾</span>
+              </div>
+              <div class="timeline-details">
+                <ul>
+                  <li>Installed and configured CCTV systems including NVR setup.</li>
+                  <li>Performed LAN and fiber optic cabling.</li>
+                  <li>Conducted monthly NAS server backups.</li>
+                  <li>Installed and reformatted desktop computers and applications.</li>
+                  <li>Provided first-line technical support for hardware, software, and network issues.</li>
+                  <li>Delivered chat and email technical support.</li>
+                  <li>Monitored IT inventory and equipment status.</li>
+                  <li>Created IDs and company materials using Photoshop.</li>
+                </ul>
+                <div class="timeline-action">
+                  <a href="photoshop-project.html" class="timeline-badge-link">🎨 View Photoshop & Design Gallery →</a>
+                </div>
+              </div>
             </div>
           </article>
 
-          <article class="timeline-item reveal">
+          <!-- 2. ULTIMAX BUILDING SOLUTIONS INC -->
+          <article class="timeline-item reveal active" tabindex="0" role="button" aria-expanded="true">
             <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <span class="timeline-date">Previous Experience</span>
-              <h3>Technical Support / IT Staff</h3>
-              <h4>Previous Companies</h4>
-              <ul>
-                <li>Installed and maintained computers, printers, CCTV systems, and network devices.</li>
-                <li>Diagnosed hardware, software, and connectivity issues.</li>
-                <li>Assisted users with Microsoft Office, email, file access, and device concerns.</li>
-                <li>Performed remote support using tools such as AnyDesk and TeamViewer.</li>
-              </ul>
+            <div class="timeline-content clickable-experience">
+              <div class="timeline-header">
+                <div>
+                  <span class="timeline-date">Apr 2022 – May 2023</span>
+                  <h3>IT Support</h3>
+                  <h4>Ultimax Building Solutions Inc</h4>
+                </div>
+                <span class="toggle-icon" aria-hidden="true">▾</span>
+              </div>
+              <div class="timeline-details">
+                <ul>
+                  <li>Installed and reformatted computers and desktop applications.</li>
+                  <li>Monitored CCTV systems and performed regular backups.</li>
+                  <li>Troubleshot computers, printers, telephones, and internet issues.</li>
+                  <li>Conducted remote troubleshooting and system diagnostics.</li>
+                </ul>
+                <div class="timeline-action">
+                  <a href="ultimax-project.html" class="timeline-badge-link">🌐 View Ultimax Project Gallery →</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. BYAHEROS EXPRESS -->
+          <article class="timeline-item reveal" tabindex="0" role="button" aria-expanded="false">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content clickable-experience">
+              <div class="timeline-header">
+                <div>
+                  <span class="timeline-date">Jul 2020 – Apr 2022</span>
+                  <h3>IT Associate</h3>
+                  <h4>Byaheros Express</h4>
+                </div>
+                <span class="toggle-icon" aria-hidden="true">▾</span>
+              </div>
+              <div class="timeline-details">
+                <ul>
+                  <li>Provided IT support for office systems and users.</li>
+                  <li>Installed CCTV and internet LAN connections.</li>
+                  <li>Monitored, reviewed, and backed up CCTV footage.</li>
+                  <li>Identified system errors and bugs.</li>
+                  <li>Supported Truemoney fund transfers between branches.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. ATAW MARKETING -->
+          <article class="timeline-item reveal" tabindex="0" role="button" aria-expanded="false">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content clickable-experience">
+              <div class="timeline-header">
+                <div>
+                  <span class="timeline-date">Jan 2019 – Nov 2020</span>
+                  <h3>IT Associate</h3>
+                  <h4>ATAW MARKETING</h4>
+                </div>
+                <span class="toggle-icon" aria-hidden="true">▾</span>
+              </div>
+              <div class="timeline-details">
+                <ul>
+                  <li>Troubleshot hardware and software issues across all workstations.</li>
+                  <li>Installed and reformatted operating systems and applications.</li>
+                  <li>Assembled and disassembled computer units.</li>
+                  <li>Installed POS hardware and software.</li>
+                  <li>Created monthly inventory and wholesale reports.</li>
+                  <li>Performed CCTV installation and monthly backups.</li>
+                </ul>
+              </div>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- REMARK: SKILLS SECTION - Technical skills at tools -->
+    <!-- SKILLS SECTION -->
     <section class="section" id="skills">
       <div class="container">
         <div class="section-heading reveal">
@@ -203,7 +279,7 @@
           <div class="skill-card reveal">
             <span class="skill-icon">🌐</span>
             <h3>Networking</h3>
-            <p>TCP/IP, DNS, DHCP, routers, access points, UniFi, and troubleshooting.</p>
+            <p>TCP/IP, DNS, DHCP, routers, access points, fiber optic cabling, and diagnostics.</p>
           </div>
 
           <div class="skill-card reveal">
@@ -233,7 +309,7 @@
       </div>
     </section>
 
-    <!-- REMARK: PROJECTS SECTION - Featured works at clickable projects -->
+    <!-- PROJECTS SECTION -->
     <section class="section alt-section" id="projects">
       <div class="container">
         <div class="section-heading reveal">
@@ -242,17 +318,12 @@
         </div>
 
         <div class="projects-grid">
-          <!-- REMARK: CLICKABLE ULTIMAX PROJECT CARD
-               Kapag pinindot ito, bubukas ang ultimax-project.html
-               kung saan makikita ang maraming screenshots ng project. -->
+          <!-- ULTIMAX PROJECT CARD -->
           <a href="ultimax-project.html" class="project-card-link" aria-label="View Ultimax Building Solutions project gallery">
             <article class="project-card reveal">
-              <!-- REMARK: COVER IMAGE NG ULTIMAX PROJECT -->
               <div class="project-image">
                 <img src="images/websiteproject.jpg" alt="Ultimax Building Solutions website project" />
               </div>
-
-              <!-- REMARK: PROJECT TITLE, DESCRIPTION, AT TECHNOLOGIES -->
               <div class="project-content">
                 <span class="project-tag">Company Website</span>
                 <h3>Ultimax Building Solutions</h3>
@@ -261,31 +332,22 @@
                   in-house manufacturing capabilities, premium aluminum and
                   glass products, project portfolio, and building solutions.
                 </p>
-
-                <!-- REMARK: MGA TOOL O PLATFORM NA GINAMIT -->
                 <div class="project-tech">
                   <span>Wix</span>
                   <span>Responsive Design</span>
                   <span>Web Design</span>
                 </div>
-
-                <!-- REMARK: TEXT NA NAGSASABI NA CLICKABLE ANG PROJECT -->
                 <span class="project-link">View Full Project Gallery →</span>
               </div>
             </article>
           </a>
 
-          <!-- REMARK: CLICKABLE AI AUTOMATION PROJECT CARD
-               Kapag pinindot ito, bubukas ang ai-project.html
-               para makita ang maraming workflow screenshots. -->
+          <!-- AI AUTOMATION PROJECT CARD -->
           <a href="ai-project.html" class="project-card-link" aria-label="View AI Social Media Workflow project gallery">
             <article class="project-card reveal">
-              <!-- REMARK: COVER IMAGE NG AI AUTOMATION PROJECT -->
               <div class="project-image">
                 <img src="images/project-ai.jpg" alt="AI automation workflow project" />
               </div>
-
-              <!-- REMARK: AI PROJECT TITLE, DESCRIPTION, AT TECHNOLOGIES -->
               <div class="project-content">
                 <span class="project-tag">Automation</span>
                 <h3>AI Social Media Workflow</h3>
@@ -293,30 +355,22 @@
                   An n8n automation that generates images, creates captions,
                   and prepares content for social media posting.
                 </p>
-
-                <!-- REMARK: MGA TOOL NA GINAMIT SA AUTOMATION -->
                 <div class="project-tech">
                   <span>n8n</span>
                   <span>OpenAI</span>
                   <span>Automation</span>
                 </div>
-
                 <span class="project-link">View Full Workflow Gallery →</span>
               </div>
             </article>
           </a>
 
-          <!-- REMARK: CLICKABLE PHOTOSHOP PROJECT CARD
-               Kapag pinindot ito, bubukas ang photoshop-project.html
-               para makita ang maraming design at edited images. -->
+          <!-- PHOTOSHOP PROJECT CARD -->
           <a href="photoshop-project.html" class="project-card-link" aria-label="View Photoshop Design Collection gallery">
             <article class="project-card reveal">
-              <!-- REMARK: COVER IMAGE NG PHOTOSHOP PROJECT -->
               <div class="project-image">
                 <img src="images/project-design.jpg" alt="Photoshop design project" />
               </div>
-
-              <!-- REMARK: PHOTOSHOP PROJECT TITLE, DESCRIPTION, AT SKILLS -->
               <div class="project-content">
                 <span class="project-tag">Graphic Design - CravingsToGo</span>
                 <h3>Photoshop Design Collection</h3>
@@ -324,14 +378,11 @@
                   A collection of photo edits, product images, promotional materials,
                   and social media graphics.
                 </p>
-
-                <!-- REMARK: MGA DESIGN SKILLS NA GINAMIT -->
                 <div class="project-tech">
                   <span>Photoshop</span>
                   <span>Photo Editing</span>
                   <span>Branding</span>
                 </div>
-
                 <span class="project-link">View Full Design Gallery →</span>
               </div>
             </article>
@@ -340,7 +391,7 @@
       </div>
     </section>
 
-    <!-- REMARK: CONTACT SECTION - Contact details at email form -->
+    <!-- CONTACT SECTION -->
     <section class="section contact-section" id="contact">
       <div class="container contact-grid">
         <div class="contact-info reveal">
@@ -353,9 +404,9 @@
 
           <div class="contact-list">
             <a href="mailto:jericalbar@gmail.com">📧 jericalbar@gmail.com</a>
-            <span>📍 Philippines</span>
-            <a href="https://github.com/" target="_blank" rel="noopener noreferrer">💻 GitHub Profile</a>
-            <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">🔗 LinkedIn Profile</a>
+            <span>📍 Sampaloc Manila, Philippines</span>
+            <span>📱 09696488009</span>
+            <a href="https://github.com/jericalbar" target="_blank" rel="noopener noreferrer">💻 GitHub Profile</a>
           </div>
         </div>
 
