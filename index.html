@@ -153,7 +153,7 @@
         </div>
 
         <div class="timeline">
-          <!-- 1. SUPIMA HOLDING INC (Gallery removed) -->
+          <!-- 1. SUPIMA HOLDING INC -->
           <article class="timeline-item reveal active" tabindex="0" role="button" aria-expanded="true">
             <div class="timeline-dot"></div>
             <div class="timeline-content clickable-experience">
@@ -429,6 +429,62 @@
       </div>
     </section>
   </main>
+
+  <!-- ==========================================
+       AI ASSISTANT CHATBOT WIDGET
+       ========================================== -->
+  <div class="chatbot-container" id="chatbotContainer">
+    <!-- Chat Window -->
+    <div class="chatbot-window" id="chatbotWindow" aria-hidden="true">
+      <div class="chatbot-header">
+        <div class="chatbot-avatar-wrap">
+          <div class="chatbot-avatar">🤖</div>
+          <div>
+            <div class="chatbot-title">Jeric's AI Assistant</div>
+            <div class="chatbot-status"><span class="status-dot-pulse"></span> Online • Ready to help</div>
+          </div>
+        </div>
+        <button class="chatbot-close-btn" id="chatbotClose" aria-label="Close chat">✕</button>
+      </div>
+
+      <!-- Quick Action Pills -->
+      <div class="chatbot-quick-pills">
+        <button type="button" class="quick-pill" data-prompt="What is Jeric's work experience?">💼 Experience</button>
+        <button type="button" class="quick-pill" data-prompt="What are Jeric's technical skills?">🛠️ Skills</button>
+        <button type="button" class="quick-pill" data-prompt="Tell me about Jeric's projects">📂 Projects</button>
+        <button type="button" class="quick-pill" data-prompt="How can I contact Jeric?">📞 Contact</button>
+        <button type="button" class="quick-pill" data-prompt="Can I download Jeric's resume?">📄 Resume</button>
+      </div>
+
+      <!-- Messages Area -->
+      <div class="chatbot-messages" id="chatbotMessages">
+        <div class="chat-message bot-message">
+          <div class="chat-bubble">
+            👋 Hi there! I'm <strong>Jeric's AI Assistant</strong>. Ask me anything about Jeric's work experience, IT support skills, projects, or how to get in touch!
+          </div>
+          <span class="chat-time">Just now</span>
+        </div>
+      </div>
+
+      <!-- Input Form -->
+      <form class="chatbot-input-area" id="chatbotForm">
+        <input type="text" id="chatbotInput" placeholder="Ask about experience, skills, contact..." autocomplete="off" required />
+        <button type="submit" class="chatbot-send-btn" id="chatbotSend" aria-label="Send message">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </form>
+    </div>
+
+    <!-- Floating Toggle Button -->
+    <button class="chatbot-toggle-btn" id="chatbotToggle" aria-label="Open chat with Jeric's AI Assistant">
+      <span class="chat-icon">💬</span>
+      <span class="chat-text">Chat with AI</span>
+      <span class="chat-unread-dot"></span>
+    </button>
+  </div>
 
   <footer class="footer">
     <div class="container footer-content">
