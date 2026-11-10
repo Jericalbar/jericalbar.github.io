@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   typeEffect();
 
-  // 2. MOBILE NAVIGATION MENU
+  // 2. MOBILE MENU TOGGLE
   const menuToggle = document.getElementById("menuToggle");
   const navLinks = document.getElementById("navLinks");
   const navLinkItems = document.querySelectorAll(".nav-link");
@@ -74,19 +74,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // 4. TIMELINE ACCORDION (Click to Expand / Collapse)
+  // 4. TIMELINE ACCORDION
   const timelineItems = document.querySelectorAll(".timeline-item");
   timelineItems.forEach((item) => {
     item.addEventListener("click", (e) => {
-      // Don't trigger toggle if user clicks an internal link
       if (e.target.tagName.toLowerCase() === "a") return;
-
       const wasActive = item.classList.contains("active");
       item.classList.toggle("active");
       item.setAttribute("aria-expanded", !wasActive);
     });
 
-    // Keyboard Accessibility (Enter or Space to toggle)
     item.addEventListener("keydown", (e) => {
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
@@ -97,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 5. CONTACT FORM HANDLER (Mailto)
+  // 5. CONTACT FORM
   const contactForm = document.getElementById("contactForm");
   if (contactForm) {
     contactForm.addEventListener("submit", (e) => {
@@ -115,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 6. DYNAMIC CURRENT YEAR
+  // 6. CURRENT YEAR
   const currentYearEl = document.getElementById("currentYear");
   if (currentYearEl) {
     currentYearEl.textContent = new Date().getFullYear();
@@ -130,32 +127,47 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // 8. CUSTOM NEON CURSOR (Dot + Glow Ring)
+  // 8. FAIL-SAFE CUSTOM NEON CURSOR LOGIC
   const cursorDot = document.getElementById("cursorDot");
   const cursorRing = document.getElementById("cursorRing");
 
-  if (cursorDot && cursorRing) {
-    let mouseX = window.innerWidth / 2;
-    let mouseY = window.innerHeight / 2;
-    let ringX = mouseX;
-    let ringY = mouseY;
+  // Tatakbo lamang sa Desktop na may mouse (screen width > 768px)
+  if (cursorDot && cursorRing && window.innerWidth > 768) {
+    let mouseX = -100;
+    let mouseY = -100;
+    let ringX = -100;
+    let ringY = -100;
+    let isInitialized = false;
 
     window.addEventListener("mousemove", (e) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
+
+      if (!isInitialized) {
+        // I-activate lang ang custom cursor kapag ginalaw na ng user ang mouse
+        document.body.classList.add("custom-cursor-active");
+        ringX = mouseX;
+        ringY = mouseY;
+        isInitialized = true;
+      }
+
       cursorDot.style.left = `${mouseX}px`;
       cursorDot.style.top = `${mouseY}px`;
     });
 
+    // Smooth animation para sa ring
     function renderCursor() {
-      ringX += (mouseX - ringX) * 0.15;
-      ringY += (mouseY - ringY) * 0.15;
-      cursorRing.style.left = `${ringX}px`;
-      cursorRing.style.top = `${ringY}px`;
+      if (isInitialized) {
+        ringX += (mouseX - ringX) * 0.16;
+        ringY += (mouseY - ringY) * 0.16;
+        cursorRing.style.left = `${ringX}px`;
+        cursorRing.style.top = `${ringY}px`;
+      }
       requestAnimationFrame(renderCursor);
     }
     renderCursor();
 
+    // Hover state kapag may itinutok na interactive element
     const hoverTargets = document.querySelectorAll(
       "a, button, input, textarea, .gallery-item, .clickable-experience, .project-card-link, .timeline-item"
     );
