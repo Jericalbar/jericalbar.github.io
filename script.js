@@ -75,21 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   typeEffect();
 
-  // 5. SCROLL REVEAL ANIMATIONS
-  const reveals = document.querySelectorAll(".reveal");
-  const revealOnScroll = () => {
-    const triggerBottom = window.innerHeight * 0.88;
-    reveals.forEach((element) => {
-      const elementTop = element.getBoundingClientRect().top;
-      if (elementTop < triggerBottom) {
-        element.classList.add("show");
-      }
-    });
-  };
-  window.addEventListener("scroll", revealOnScroll);
-  revealOnScroll();
-
-  // 6. CURSOR GLOW EFFECT (DESKTOP)
+  // 5. CURSOR GLOW EFFECT (DESKTOP)
   const cursorGlow = document.getElementById("cursorGlow");
   if (cursorGlow && window.innerWidth > 768) {
     window.addEventListener("mousemove", (e) => {
@@ -98,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 7. CLICKABLE EXPERIENCE ACCORDION
+  // 6. CLICKABLE EXPERIENCE ACCORDION
   const timelineItems = document.querySelectorAll(".timeline-item");
   timelineItems.forEach((item) => {
     const clickableArea = item.querySelector(".clickable-experience");
@@ -120,14 +106,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 8. CONTACT FORM SUBMISSION
+  // 7. CONTACT FORM SUBMISSION
   const contactForm = document.getElementById("contactForm");
   if (contactForm) {
     contactForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      const name = document.getElementById("name").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const message = document.getElementById("message").value.trim();
+      const name = document.getElementById("name")?.value.trim() || "";
+      const email = document.getElementById("email")?.value.trim() || "";
+      const message = document.getElementById("message")?.value.trim() || "";
 
       const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
       const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
@@ -137,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ==========================================
-  // 9. CLEAN FLOATING AI CHATBOT LOGIC
+  // 8. CLEAN FLOATING AI CHATBOT LOGIC
   // ==========================================
   const chatFloatBtn = document.getElementById("chatFloatBtn");
   const chatPopup = document.getElementById("chatPopup");
@@ -164,6 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Helper: Append Message
     const appendMsg = (text, sender = "bot") => {
+      if (!chatConversation) return;
       const row = document.createElement("div");
       row.className = `chat-bubble-row ${sender}-row`;
 
@@ -231,24 +218,26 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     // Chat submit
-    chatInputBar.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const text = chatTextInput.value.trim();
-      if (!text) return;
+    if (chatInputBar) {
+      chatInputBar.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const text = chatTextInput?.value.trim() || "";
+        if (!text) return;
 
-      appendMsg(text, "user");
-      chatTextInput.value = "";
+        appendMsg(text, "user");
+        if (chatTextInput) chatTextInput.value = "";
 
-      setTimeout(() => {
-        const reply = answerQuestion(text);
-        appendMsg(reply, "bot");
-      }, 350);
-    });
+        setTimeout(() => {
+          const reply = answerQuestion(text);
+          appendMsg(reply, "bot");
+        }, 350);
+      });
+    }
 
     // Pill clicks
     chatPills.forEach((pill) => {
       pill.addEventListener("click", () => {
-        const ask = pill.getAttribute("data-ask");
+        const ask = pill.getAttribute("data-ask") || "";
         let queryText = pill.textContent.trim();
         appendMsg(queryText, "user");
 
