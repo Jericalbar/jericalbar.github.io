@@ -105,7 +105,7 @@
     }
 
     /* =========================================================
-       CUSTOM NEON CURSOR (LITAW AGAD-AGAD SA INTRO & SITE)
+       CUSTOM NEON CURSOR
        ========================================================= */
     .custom-cursor-dot,
     .custom-cursor-ring {
@@ -146,7 +146,7 @@
     }
 
     /* =========================================================
-       MAANGAS NA INTRO OVERLAY & "MAAGNAS" SHATTER ANIMATION
+       INTRO OVERLAY & SHATTER ANIMATION
        ========================================================= */
     .intro-overlay {
       position: fixed;
@@ -271,16 +271,12 @@
       transform: translateX(6px);
     }
 
-    /* MATINDING GLITCH + VAPORIZE / MAAGNAS ANIMATION */
     .intro-box.glitch-out {
       animation: cyberShatter 0.9s cubic-bezier(0.3, 0, 0.2, 1) forwards;
     }
 
     @keyframes cyberShatter {
-      0% {
-        transform: scale(1);
-        filter: blur(0px);
-      }
+      0% { transform: scale(1); filter: blur(0px); }
       20% {
         transform: scale(1.04) translate(-8px, 4px);
         filter: blur(2px) drop-shadow(4px 0 #ff0055) drop-shadow(-4px 0 #00ffff);
@@ -419,7 +415,7 @@
     }
 
     /* =========================================================
-       HERO / HOME SECTION (MAANGAS TECH DESIGN)
+       HERO SECTION
        ========================================================= */
     .hero {
       min-height: 100vh;
@@ -577,9 +573,7 @@
       font-size: 0.82rem;
     }
 
-    /* =========================================================
-       HOLOGRAPHIC 3D PROFILE CARD
-       ========================================================= */
+    /* 3D PROFILE CARD */
     .hero-visual {
       display: flex;
       justify-content: center;
@@ -671,7 +665,7 @@
     }
 
     /* =========================================================
-       SECTIONS: ABOUT, TIMELINE, SKILLS, PROJECTS, CONTACT
+       SECTIONS & CARDS
        ========================================================= */
     .section-heading {
       max-width: 760px;
@@ -1117,15 +1111,11 @@
 </head>
 <body class="intro-active">
 
-  <!-- =========================================================
-       CUSTOM NEON CURSOR (LITAW NA LITAW KAHIT SA INTRO!)
-       ========================================================= -->
+  <!-- CUSTOM NEON CURSOR -->
   <div class="custom-cursor-dot" id="cursorDot"></div>
   <div class="custom-cursor-ring" id="cursorRing"></div>
 
-  <!-- =========================================================
-       MAANGAS NA INTRO OVERLAY WITH GLITCH DISINTEGRATE
-       ========================================================= -->
+  <!-- INTRO OVERLAY -->
   <div class="intro-overlay" id="introOverlay">
     <div class="intro-shockwave" id="shockwave"></div>
     <div class="intro-box" id="introBox">
@@ -1162,7 +1152,7 @@
   </header>
 
   <main>
-    <!-- 1. HERO/HOME SECTION (MAANGAS WITH 3D TILT) -->
+    <!-- 1. HERO SECTION -->
     <section class="hero section" id="home">
       <div class="container hero-grid">
         <div class="hero-content">
@@ -1460,23 +1450,23 @@
             </article>
           </a>
 
-          <!-- 2. AI AUTOMATION PROJECT CARD -->
+          <!-- 2. AI AUTOMATION PROJECT CARD (INAYOS NA ANG IMAGE PATH) -->
           <a href="ai-project.html" class="project-card-link" aria-label="View AI Social Media Workflow project gallery">
             <article class="project-card">
               <div class="project-image">
-                <img src="images/ai-workflow-overview" alt="AI automation workflow project" />
+                <img src="images/ai/ai-workflow-overview.png" alt="AI automation workflow project" />
               </div>
               <div class="project-content">
                 <span class="project-tag">Automation</span>
                 <h3>AI Social Media Workflow</h3>
                 <p>
-                  An automated workflow using n8n, OpenAI, Google AI Studio, and Claude to generate images, create captions, and prepare social media content.
+                  An autonomous pipeline built with n8n, OpenAI ChatGPT, and DALL-E 3 to automatically generate visual graphics, write contextual captions, and publish directly to Facebook.
                 </p>
                 <div class="project-tech">
                   <span>n8n</span>
                   <span>OpenAI</span>
-                  <span>Google AI Studio</span>
-                  <span>Claude</span>
+                  <span>DALL-E 3</span>
+                  <span>Meta Graph API</span>
                   <span>Automation</span>
                 </div>
                 <span class="project-link">View Full Workflow Gallery →</span>
@@ -1560,7 +1550,7 @@
     </div>
   </footer>
 
-  <!-- Start of Tawk.to Script -->
+  <!-- Tawk.to Script -->
   <script type="text/javascript">
   var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
   (function(){
@@ -1573,9 +1563,9 @@
   })();
   </script>
 
-  <!-- SCRIPT LOGIC -->
+  <!-- JAVASCRIPT LOGIC -->
   <script>
-    // 1. INSTANT-ON NEON CURSOR (LITAW AGAD-AGAD SA INTRO PA LANG)
+    // 1. NEON CURSOR
     const cursorDot = document.getElementById("cursorDot");
     const cursorRing = document.getElementById("cursorRing");
 
@@ -1585,7 +1575,6 @@
       let ringX = mouseX;
       let ringY = mouseY;
 
-      // Unang pwesto sa gitna
       cursorDot.style.left = `${mouseX}px`;
       cursorDot.style.top = `${mouseY}px`;
       cursorRing.style.left = `${ringX}px`;
@@ -1607,7 +1596,6 @@
       }
       requestAnimationFrame(renderCursor);
 
-      // Hover reaction sa lahat ng buttons & links kasama ang INTRO BUTTON
       document.addEventListener("mouseover", (e) => {
         const target = e.target.closest("a, button, input, textarea, .intro-btn, .clickable-experience, .project-card-link");
         if (target) {
@@ -1619,7 +1607,7 @@
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-      // 2. MATINDING GLITCH + VAPORIZE / MAAGNAS INTRO SHUTTER
+      // 2. INTRO SHUTTER & SHOCKWAVE
       const openBtn = document.getElementById("openPortfolioBtn");
       const introOverlay = document.getElementById("introOverlay");
       const introBox = document.getElementById("introBox");
@@ -1643,7 +1631,7 @@
         });
       }
 
-      // 3. 3D TILT EFFECT SA PROFILE CARD
+      // 3. 3D TILT EFFECT
       const heroVisual = document.getElementById("heroVisual");
       const profileCard = document.getElementById("profileCard");
 
@@ -1666,9 +1654,9 @@
       const typedTextEl = document.getElementById("typedText");
       const words = [
         "IT Support Specialist",
-        "Network Support ",
+        "Network Support",
         "CCTV & Hardware Tech",
-        "AI Automation"
+        "AI Automation Specialist"
       ];
       let wordIndex = 0, charIndex = 0, isDeleting = false;
 
@@ -1714,7 +1702,7 @@
         });
       });
 
-      // 7. YEAR
+      // 7. CURRENT YEAR
       const yr = document.getElementById("currentYear");
       if (yr) yr.textContent = new Date().getFullYear();
     });
