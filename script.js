@@ -105,9 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!clickableArea) return;
 
     const toggleAccordion = (e) => {
-      // Don't toggle if an internal link was clicked
       if (e.target.closest("a")) return;
-
       const isExpanded = item.classList.toggle("active");
       item.setAttribute("aria-expanded", isExpanded ? "true" : "false");
     };
@@ -139,148 +137,125 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ==========================================
-  // 9. AI ASSISTANT CHATBOT LOGIC
+  // 9. CLEAN FLOATING AI CHATBOT LOGIC
   // ==========================================
-  const chatbotToggle = document.getElementById("chatbotToggle");
-  const chatbotWindow = document.getElementById("chatbotWindow");
-  const chatbotClose = document.getElementById("chatbotClose");
-  const chatbotForm = document.getElementById("chatbotForm");
-  const chatbotInput = document.getElementById("chatbotInput");
-  const chatbotMessages = document.getElementById("chatbotMessages");
-  const quickPills = document.querySelectorAll(".quick-pill");
+  const chatFloatBtn = document.getElementById("chatFloatBtn");
+  const chatPopup = document.getElementById("chatPopup");
+  const chatCloseBtn = document.getElementById("chatCloseBtn");
+  const chatInputBar = document.getElementById("chatInputBar");
+  const chatTextInput = document.getElementById("chatTextInput");
+  const chatConversation = document.getElementById("chatConversation");
+  const chatPills = document.querySelectorAll(".chat-pill");
 
-  if (chatbotToggle && chatbotWindow) {
-    // Open/Close Chat Window
-    const toggleChat = () => {
-      const isOpen = chatbotWindow.classList.toggle("open");
-      chatbotWindow.setAttribute("aria-hidden", isOpen ? "false" : "true");
+  if (chatFloatBtn && chatPopup) {
+    // Open / Close Toggle
+    chatFloatBtn.addEventListener("click", () => {
+      const isOpen = chatPopup.classList.toggle("active");
+      chatPopup.setAttribute("aria-hidden", isOpen ? "false" : "true");
       if (isOpen) {
-        chatbotInput?.focus();
-        const unreadDot = chatbotToggle.querySelector(".chat-unread-dot");
-        if (unreadDot) unreadDot.style.display = "none";
+        chatTextInput?.focus();
       }
-    };
-
-    chatbotToggle.addEventListener("click", toggleChat);
-    chatbotClose?.addEventListener("click", () => {
-      chatbotWindow.classList.remove("open");
-      chatbotWindow.setAttribute("aria-hidden", "true");
     });
 
-    // Helper: Add Message to Chat
-    const addMessage = (text, sender = "bot") => {
-      const msgDiv = document.createElement("div");
-      msgDiv.className = `chat-message ${sender}-message`;
+    chatCloseBtn?.addEventListener("click", () => {
+      chatPopup.classList.remove("active");
+      chatPopup.setAttribute("aria-hidden", "true");
+    });
 
-      const bubble = document.createElement("div");
-      bubble.className = "chat-bubble";
-      bubble.innerHTML = text;
+    // Helper: Append Message
+    const appendMsg = (text, sender = "bot") => {
+      const row = document.createElement("div");
+      row.className = `chat-bubble-row ${sender}-row`;
+
+      const content = document.createElement("div");
+      content.className = "chat-bubble-content";
+      content.innerHTML = text;
 
       const time = document.createElement("span");
-      time.className = "chat-time";
+      time.className = "chat-timestamp";
       const now = new Date();
       time.textContent = now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
 
-      msgDiv.appendChild(bubble);
-      msgDiv.appendChild(time);
-      chatbotMessages.appendChild(msgDiv);
+      row.appendChild(content);
+      row.appendChild(time);
+      chatConversation.appendChild(row);
 
-      // Auto scroll to latest
-      chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+      chatConversation.scrollTop = chatConversation.scrollHeight;
     };
 
-    // Chatbot Knowledge Engine (Instant client-side response matching Jeric's resume)
-    const getBotResponse = (query) => {
+    // Chatbot Knowledge Engine (Responds accurately based on Jeric's resume)
+    const answerQuestion = (query) => {
       const q = query.toLowerCase();
 
-      if (q.includes("experience") || q.includes("background") || q.includes("work") || q.includes("company") || q.includes("companies")) {
-        return "Jeric has over <strong>6 years of IT experience</strong> across four companies:<br><br>" +
+      if (q.includes("experience") || q.includes("background") || q.includes("work") || q.includes("company")) {
+        return "Jeric has over <strong>6 years of experience</strong> across four companies:<br><br>" +
                "• <strong>Supima Holding Inc</strong> (May 2023 - Present) — IT Staff (CCTV/NVR, LAN/Fiber optic cabling, NAS backups, user support).<br>" +
                "• <strong>Ultimax Building Solutions</strong> (2022 - 2023) — IT Support & website.<br>" +
                "• <strong>Byaheros Express</strong> (2020 - 2022) — IT Associate.<br>" +
                "• <strong>ATAW Marketing</strong> (2019 - 2020) — IT Associate.<br><br>" +
-               "👉 You can check the <a href='#experience' style='color:#6af0c4;text-decoration:underline;'>Experience Section</a> for full bullet points!";
-      }
-
-      if (q.includes("supima")) {
-        return "At <strong>Supima Holding Inc</strong> (May 2023 – Present), Jeric works as IT Staff handling:<br>" +
-               "• CCTV system & NVR setup<br>" +
-               "• LAN and fiber optic cabling<br>" +
-               "• Monthly NAS server backups<br>" +
-               "• Desktop reformatting, remote assistance, and hardware support.";
-      }
-
-      if (q.includes("ultimax")) {
-        return "At <strong>Ultimax Building Solutions Inc</strong> (Apr 2022 – May 2023), Jeric managed desktop reformatting, CCTV maintenance, printer/telephone troubleshooting, and built their official website! <a href='ultimax-project.html' style='color:#6af0c4;text-decoration:underline;'>View Ultimax Project Gallery →</a>";
+               "👉 Check the <a href='#experience' style='color:#6af0c4;text-decoration:underline;'>Experience Section</a> for full details!";
       }
 
       if (q.includes("skill") || q.includes("tech") || q.includes("hardware") || q.includes("network") || q.includes("cctv")) {
         return "Jeric's core technical skills include:<br>" +
-               "• <strong>IT & Desktop Support</strong>: Windows OS, reformatting, hardware diagnosis, AnyDesk/remote tools.<br>" +
-               "• <strong>Networking</strong>: LAN, Fiber optic cabling, TCP/IP, routers, DNS, DHCP.<br>" +
-               "• <strong>CCTV & Security</strong>: NVR setup, camera wiring, backup management.<br>" +
-               "• <strong>Creative & Automation</strong>: Adobe Photoshop, n8n workflows, and OpenAI.";
+               "• <strong>IT & Hardware</strong>: Windows reformatting, hardware troubleshooting, remote diagnostics.<br>" +
+               "• <strong>Networking</strong>: LAN & Fiber optic cabling, TCP/IP, routers, DNS/DHCP.<br>" +
+               "• <strong>CCTV & NAS</strong>: NVR setup, camera wiring, monthly backups.<br>" +
+               "• <strong>Software & AI</strong>: Adobe Photoshop, n8n workflows, OpenAI.";
       }
 
       if (q.includes("project") || q.includes("portfolio")) {
         return "Jeric's featured projects are:<br>" +
-               "1. <a href='ultimax-project.html' style='color:#6af0c4;text-decoration:underline;'>Ultimax Building Solutions Website</a> (Company website)<br>" +
-               "2. <a href='ai-project.html' style='color:#6af0c4;text-decoration:underline;'>AI Social Media Workflow</a> (n8n + OpenAI automation)<br>" +
-               "3. <a href='photoshop-project.html' style='color:#6af0c4;text-decoration:underline;'>Photoshop Design Collection</a> (Branding & food graphics)";
+               "1. <a href='ultimax-project.html' style='color:#6af0c4;text-decoration:underline;'>Ultimax Building Solutions Website</a><br>" +
+               "2. <a href='ai-project.html' style='color:#6af0c4;text-decoration:underline;'>AI Social Media Workflow (n8n + OpenAI)</a><br>" +
+               "3. <a href='photoshop-project.html' style='color:#6af0c4;text-decoration:underline;'>Photoshop Design Collection</a>";
       }
 
-      if (q.includes("contact") || q.includes("email") || q.includes("phone") || q.includes("reach") || q.includes("hire") || q.includes("location") || q.includes("address")) {
-        return "You can get in touch with Jeric directly:<br>" +
+      if (q.includes("contact") || q.includes("email") || q.includes("phone") || q.includes("reach") || q.includes("hire") || q.includes("location")) {
+        return "You can reach Jeric directly:<br>" +
                "📧 <strong>Email</strong>: <a href='mailto:jericalbar@gmail.com' style='color:#6af0c4;'>jericalbar@gmail.com</a><br>" +
                "📱 <strong>Phone</strong>: 09696488009<br>" +
                "📍 <strong>Location</strong>: Sampaloc Manila, Philippines<br>" +
-               "Or drop a message down in the <a href='#contact' style='color:#6af0c4;text-decoration:underline;'>Contact Form</a>!";
+               "Or send a message using the <a href='#contact' style='color:#6af0c4;text-decoration:underline;'>Contact Form</a>!";
       }
 
       if (q.includes("resume") || q.includes("cv") || q.includes("download")) {
-        return "📄 You can download Jeric's official resume right here: <br><br><a href='images/CV/CV.pdf' class='timeline-badge-link' download style='color:#04111e;background:#6af0c4;padding:6px 14px;border-radius:20px;font-weight:700;'>Download Resume (PDF)</a>";
+        return "📄 You can download Jeric's resume here:<br><br><a href='images/CV/CV.pdf' class='timeline-badge-link' download style='color:#04111e;background:#6af0c4;padding:6px 14px;border-radius:20px;font-weight:700;'>Download Resume (PDF)</a>";
       }
 
-      if (q.includes("education") || q.includes("graduate") || q.includes("college") || q.includes("school") || q.includes("degree")) {
-        return "🎓 Jeric graduated with a <strong>Bachelor of Science in Information Technology (BSIT)</strong> from <strong>STI Recto</strong> in 2018.";
+      if (q.includes("hello") || q.includes("hi") || q.includes("kamusta")) {
+        return "Hello! How can I assist you with Jeric's portfolio today? Feel free to ask about his work history, IT skills, or how to contact him!";
       }
 
-      if (q.includes("hello") || q.includes("hi") || q.includes("hey") || q.includes("kamusta")) {
-        return "Hello! How can I assist you with Jeric's profile today? Feel free to ask about his technical experience, projects, or how to get in touch!";
-      }
-
-      // Default fallback
-      return "Thanks for asking! Jeric specializes in <strong>IT Support, Networking, CCTV systems, and AI Automation</strong>.<br><br>" +
-             "You can reach him at <a href='mailto:jericalbar@gmail.com' style='color:#6af0c4;'>jericalbar@gmail.com</a> or use the quick buttons above to explore!";
+      return "Jeric is an <strong>IT Support Specialist</strong> experienced in hardware, networking, CCTV, and AI automation. Feel free to contact him at <a href='mailto:jericalbar@gmail.com' style='color:#6af0c4;'>jericalbar@gmail.com</a>!";
     };
 
-    // Form Submit Handler
-    chatbotForm.addEventListener("submit", (e) => {
+    // Chat submit
+    chatInputBar.addEventListener("submit", (e) => {
       e.preventDefault();
-      const userText = chatbotInput.value.trim();
-      if (!userText) return;
+      const text = chatTextInput.value.trim();
+      if (!text) return;
 
-      addMessage(userText, "user");
-      chatbotInput.value = "";
+      appendMsg(text, "user");
+      chatTextInput.value = "";
 
-      // Simulate a quick AI thinking indicator
       setTimeout(() => {
-        const botResponse = getBotResponse(userText);
-        addMessage(botResponse, "bot");
-      }, 400);
+        const reply = answerQuestion(text);
+        appendMsg(reply, "bot");
+      }, 350);
     });
 
-    // Quick Pill Buttons
-    quickPills.forEach((pill) => {
+    // Pill clicks
+    chatPills.forEach((pill) => {
       pill.addEventListener("click", () => {
-        const prompt = pill.getAttribute("data-prompt");
-        if (!prompt) return;
+        const ask = pill.getAttribute("data-ask");
+        let queryText = pill.textContent.trim();
+        appendMsg(queryText, "user");
 
-        addMessage(prompt, "user");
         setTimeout(() => {
-          const botResponse = getBotResponse(prompt);
-          addMessage(botResponse, "bot");
-        }, 350);
+          const reply = answerQuestion(ask);
+          appendMsg(reply, "bot");
+        }, 300);
       });
     });
   }
