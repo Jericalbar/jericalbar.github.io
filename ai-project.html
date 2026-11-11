@@ -8,6 +8,41 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Styling para sa Protection / Inquiry Lock Banner */
+    .workflow-lock-card {
+      grid-column: span 12;
+      background: linear-gradient(135deg, rgba(13, 26, 45, 0.95), rgba(7, 17, 31, 0.98));
+      border: 1px dashed rgba(106, 240, 196, 0.35);
+      border-radius: 20px;
+      padding: 35px 30px;
+      text-align: center;
+      margin-top: 15px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    }
+    .workflow-lock-card h3 {
+      font-size: 1.4rem;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+    .workflow-lock-card p {
+      color: var(--muted);
+      max-width: 650px;
+      margin: 0 auto 20px;
+      font-size: 0.95rem;
+    }
+    .single-preview-wrap {
+      grid-column: span 12 !important;
+    }
+    .single-preview-wrap .gallery-img-wrap {
+      height: 480px !important;
+    }
+    @media (max-width: 768px) {
+      .single-preview-wrap .gallery-img-wrap {
+        height: 260px !important;
+      }
+    }
+  </style>
 </head>
 
 <body class="project-page">
@@ -21,20 +56,20 @@
       <p class="eyebrow">Intelligent Automation</p>
       <h1>AI Social Media Workflow</h1>
       <p class="project-detail-description">
-        An end-to-end automated pipeline created with <strong>n8n, Google AI Studio, Claude, and OpenAI</strong> to orchestrate prompt generation, synthesize AI graphics, generate contextual captions, and publish directly to social channels.
+        An end-to-end automated pipeline created with <strong>n8n, OpenAI ChatGPT, and DALL·E 3</strong> to orchestrate prompt generation, synthesize AI graphics, generate contextual captions, and publish directly to Facebook channels.
       </p>
 
       <div class="project-tech project-detail-tech">
         <span>n8n Workflows</span>
-        <span>Google AI Studio</span>
-        <span>Claude 3.5</span>
-        <span>OpenAI API</span>
+        <span>OpenAI ChatGPT</span>
+        <span>DALL·E 3</span>
+        <span>Meta Graph API</span>
         <span>Task Automation</span>
       </div>
 
       <div class="project-detail-buttons">
-        <a href="https://github.com/jericalbar" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View GitHub</a>
-        <a href="index.html#contact" class="btn btn-secondary">Inquire Workflow</a>
+        <a href="index.html#contact" class="btn btn-primary">🔒 Inquire to See Full Workflow</a>
+        <a href="https://github.com/jericalbar" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View GitHub</a>
       </div>
     </div>
   </header>
@@ -44,75 +79,35 @@
       <div class="container">
         <div class="section-heading">
           <p class="eyebrow">Pipeline Architecture</p>
-          <h2>Workflow Breakdown</h2>
-          <p class="gallery-instruction">💡 Click any step to inspect the workflow in full size.</p>
+          <h2>Workflow Overview</h2>
+          <p class="gallery-instruction">💡 Click the workflow map below to inspect high-level orchestration.</p>
         </div>
 
         <div class="project-gallery">
-          <!-- 1. Full Workflow -->
-          <button class="gallery-item" type="button"
-            onclick="openLightbox('images/ai/ai-workflow-overview.pg', 'Complete n8n Workflow Overview')">
+          <!-- 1. Nag-iisang Full Workflow Overview (Naka-protect ang internal codes) -->
+          <button class="gallery-item single-preview-wrap" type="button"
+            onclick="openLightbox('images/ai/ai-workflow-overview.png', 'n8n Autonomous Social Pipeline Architecture')">
             <div class="gallery-img-wrap">
-              <span class="gallery-badge">Architecture</span>
-              <img src="images/ai/ai-workflow-overview.png" alt="Complete n8n workflow graph" />
+              <span class="gallery-badge">High-Level Architecture</span>
+              <img src="images/ai/ai-workflow-overview.png" alt="Complete n8n workflow graph overview" />
             </div>
             <div class="gallery-info">
-              <h4>Full Workflow Graph</h4>
-              <span class="gallery-view-hint">🔍 Expand</span>
+              <h4>End-to-End Orchestration Map</h4>
+              <span class="gallery-view-hint">🔍 Expand Overview</span>
             </div>
           </button>
 
-          <!-- 2. Trigger -->
-          <button class="gallery-item" type="button"
-            onclick="openLightbox('images/ai/ai-trigger.jpg', 'Webhook / Schedule Trigger Node')">
-            <div class="gallery-img-wrap">
-              <span class="gallery-badge">Node Config</span>
-              <img src="images/ai/ai-trigger.jpg" alt="Automation trigger node" />
-            </div>
-            <div class="gallery-info">
-              <h4>Trigger & Data Input</h4>
-              <span class="gallery-view-hint">🔍 Expand</span>
-            </div>
-          </button>
-
-          <!-- 3. Image Gen -->
-          <button class="gallery-item" type="button"
-            onclick="openLightbox('images/ai/ai-image-generation.jpg', 'AI Image Generation Node')">
-            <div class="gallery-img-wrap">
-              <span class="gallery-badge">AI Pipeline</span>
-              <img src="images/ai/ai-image-generation.jpg" alt="AI image generation step" />
-            </div>
-            <div class="gallery-info">
-              <h4>AI Image Synthesizer</h4>
-              <span class="gallery-view-hint">🔍 Expand</span>
-            </div>
-          </button>
-
-          <!-- 4. Caption Gen -->
-          <button class="gallery-item" type="button"
-            onclick="openLightbox('images/ai/ai-caption.jpg', 'LLM Caption & Copy Generation')">
-            <div class="gallery-img-wrap">
-              <span class="gallery-badge">NLP Node</span>
-              <img src="images/ai/ai-caption.jpg" alt="AI caption generation step" />
-            </div>
-            <div class="gallery-info">
-              <h4>Contextual Caption Writer</h4>
-              <span class="gallery-view-hint">🔍 Expand</span>
-            </div>
-          </button>
-
-          <!-- 5. Social Post -->
-          <button class="gallery-item" type="button"
-            onclick="openLightbox('images/ai/ai-social-post.jpg', 'Multi-Platform Social Auto-Publish')">
-            <div class="gallery-img-wrap">
-              <span class="gallery-badge">Output</span>
-              <img src="images/ai/ai-social-post.jpg" alt="Social media posting node" />
-            </div>
-            <div class="gallery-info">
-              <h4>Social Dispatch Node</h4>
-              <span class="gallery-view-hint">🔍 Expand</span>
-            </div>
-          </button>
+          <!-- 2. INQUIRY / PROTECTION LOCK BANNER -->
+          <div class="workflow-lock-card">
+            <span style="font-size: 2.2rem; display: block; margin-bottom: 8px;">🔒</span>
+            <h3>Proprietary Prompts & Node Logic Protected</h3>
+            <p>
+              To protect intellectual property and custom engineering, internal prompt formulas, parsing logic, and direct API configurations are kept confidential.
+            </p>
+            <a href="index.html#contact" class="btn btn-primary">
+              Inquire / Request Live Demo Access →
+            </a>
+          </div>
         </div>
       </div>
     </section>
